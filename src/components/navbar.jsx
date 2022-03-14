@@ -5,7 +5,7 @@ const NavbarForm = () => {
   const UserCtx = useContext(UserContext);
   // bg="light"
   return (
-    <Navbar expand="lg" bg="dark" variant="dark">
+    <Navbar expand="lg" bg="light" variant="light">
       <Container>
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

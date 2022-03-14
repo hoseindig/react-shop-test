@@ -5,7 +5,7 @@ import React, { useReducer } from "react";
 const defaultState = {
   items: [],
   total: 0,
-  user: null,
+  user: { userId: null, username: null, fullName: null },
 };
 //#region
 const UserReducer = (state, action) => {
