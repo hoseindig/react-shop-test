@@ -1,31 +1,46 @@
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import {
+  Navbar,
+  Container,
+  Nav,
+  NavDropdown,
+  Form,
+  Popover,
+  OverlayTrigger,
+  Button,
+} from "react-bootstrap";
 import UserContext from "../store/userContext";
+import CardDropDown from "./CardDropDown";
+import styles from "./navbar.module.scss";
 const NavbarForm = () => {
   const UserCtx = useContext(UserContext);
+
+  const [showCardDropDown, setShowCardDropDown] = useState(false);
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Header as="h3">My Cart</Popover.Header>
+      <Popover.Body>
+        And here's some <strong>amazing</strong> content. It's very engaging.
+        right?
+      </Popover.Body>
+    </Popover>
+  );
   // bg="light"
   return (
     <Navbar expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home">Big-Shop</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <img src="images/logo.jpg" alt="" />
+        </Navbar.Brand>
+
+        <div className={styles.serachBox}>
+          <input type="text" />
+          <button>
+            <i className="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end login-btn">
           <Navbar.Text>
             {!UserCtx.user.userId && (
@@ -41,8 +56,26 @@ const NavbarForm = () => {
             )}
           </Navbar.Text>
           <Navbar.Text>
-            {UserCtx.user.userId && <span onClick={UserCtx.userLogout}>Logout</span>}
+            {UserCtx.user.userId && (
+              <span onClick={UserCtx.userLogout}>Logout</span>
+            )}
           </Navbar.Text>
+
+          {/* <OverlayTrigger trigger="hover" placement="bottom" overlay={popover}> 
+            <span className={styles["shopping-cart"]}>
+              <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+              Shopping Cart
+            </span>
+          </OverlayTrigger> */}
+          <span
+            className={styles["shopping-cart"]}
+            onMouseOver={() => setShowCardDropDown(true)}
+            onMouseLeave={() => setShowCardDropDown(false)}
+          >
+            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+            Shopping Cart
+          </span>
+          <CardDropDown show={showCardDropDown} />
         </Navbar.Collapse>
       </Container>
     </Navbar>

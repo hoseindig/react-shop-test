@@ -6,6 +6,7 @@ const UserContext = React.createContext({
   fullName: null,
   userLogin:()=>{},
   userLogout:()=>{},
+  cartItems:[]
 });
 
 export default UserContext;

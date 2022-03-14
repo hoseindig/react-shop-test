@@ -79,6 +79,15 @@ const UserProvider = (props) => {
         ],
       },
     },
+    cartItems: [
+      {
+        id: 1,
+        title: "Kodak PIXPRO Astro Zoom AZ421 16 MP",
+        image: "cart-product-1.jpg",
+        price: 87.34,
+        count: 1,
+      },
+    ],
   };
   return (
     <UserContext.Provider value={myContext}>
