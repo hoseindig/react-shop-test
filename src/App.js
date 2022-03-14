@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.scss";
+import NavbarForm from "./components/navbar";
+import UserProvider from "./store/userProvider";
+import React, { useState } from "react";
 
 function App() {
+  const userData = useState({
+    usewrname: "",
+    password: "",
+    fullName: "hossein sheykhi",
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+      <div className="App">
+        <NavbarForm />
+      </div>
+    </UserProvider>
   );
 }
 

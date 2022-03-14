@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.login-btn {
+  span {
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 0 5px;
+    &:hover {
+      color: white;
+    }
+  }
+}
