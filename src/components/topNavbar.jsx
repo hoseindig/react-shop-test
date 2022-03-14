@@ -1,90 +1,65 @@
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+
+import UserContext from "../store/userContext";
+
 import styles from "./topNavbar.module.scss";
 const TopNavbar = () => {
+  const [seletedLanguage, setseletedLanguage] = useState(1);
+  const [seletedpriceUint, setseletedpriceUint] = useState(4);
+  const userCnx = useContext(UserContext);
   const cssText = "justify-content-end " + styles["basic-navbar-nav"];
+  //   debugger;
+  const [Languages, setLanguages] = useState(
+    userCnx.siteSeting.header.Languages
+  );
+  const { menuItems, priceUint } = userCnx.siteSeting.header;
+
+  const getpriceUintName = () => {
+    return priceUint.find((i) => i.id === seletedpriceUint);
+  };
+  const getLanguagesName = () => {
+    return Languages.find((i) => i.id === seletedLanguage);
+  };
   return (
     <Navbar>
       <Container>
         {/* <Navbar.Brand href="#home">Navbar with text</Navbar.Brand> */}
-        <NavDropdown title="Price Unit" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">£ GBP </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">€ Euro</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">
-            £ Pound Sterling
-          </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">$ US Dollar</NavDropdown.Item>
+        <NavDropdown title={getpriceUintName().name} id="basic-nav-dropdown">
+          {priceUint.map((p) => {
+            return (
+              <NavDropdown.Item key={p.id} href="#action/3.1">
+                {p.name}
+              </NavDropdown.Item>
+            );
+          })}
         </NavDropdown>
-        <NavDropdown title="Language" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">English </NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Germany</NavDropdown.Item>
+        <NavDropdown title={getLanguagesName().name} id="basic-nav-dropdown">
+          {Languages.map((i) => {
+            return (
+              <NavDropdown.Item
+                key={i.id}
+                href="#action/3.1"
+                onClick={() => setseletedLanguage(i.id)}
+              >
+                {i.name}
+              </NavDropdown.Item>
+            );
+          })}
         </NavDropdown>
         <Navbar.Toggle />
         <Navbar.Collapse className={cssText}>
-          <Nav.Link href="#home">
-            <i className="icons-left fa fa-random"></i>My Compare
-          </Nav.Link>
-          <Nav.Link href="#home">
-            <i className="icons-left fa fa-heart"></i>Wishlist
-          </Nav.Link>
-          <Nav.Link href="#home">
-            <i className="icons-left fa fa-user"></i>
-            My Account
-          </Nav.Link>
-          <Nav.Link href="#home">
-            <i className="icons-left fa fa-phone"></i>
-            Contact
-          </Nav.Link>
-          <Nav.Link href="#home">
-            <i className="icons-left fa fa-share"></i>
-            Checkout
-          </Nav.Link>
+          {menuItems.map((m) => {
+            return (
+              <Nav.Link href="#home" key={m.id}>
+                <i className={m.icon}></i>
+                {m.name}
+              </Nav.Link>
+            );
+          })}
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    /* <Navbar bg="light" expand="lg">
-      <Container>
-        <Nav className="me-auto">
-          <NavDropdown title="Price Unit" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">£ GBP </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">€ Euro</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">
-              £ Pound Sterling
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">$ US Dollar</NavDropdown.Item>
-     
-          </NavDropdown>
-        </Nav>
-        <Nav className="me-auto">
-          <NavDropdown title="Language" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">English </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Germany</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className={styles["basic-navbar-nav"]}>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">
-              <i className="icons-left fa fa-random"></i>My Compare
-            </Nav.Link>
-            <Nav.Link href="#home">
-              <i className="icons-left fa fa-heart"></i>Wishlist
-            </Nav.Link>
-            <Nav.Link href="#home">
-              <i className="icons-left fa fa-user"></i>
-              My Account
-            </Nav.Link>
-            <Nav.Link href="#home">
-              <i className="icons-left fa fa-phone"></i>
-              Contact
-            </Nav.Link>
-            <Nav.Link href="#home">
-              <i className="icons-left fa fa-share"></i>
-              Checkout
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>*/
   );
 };
 

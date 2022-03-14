@@ -50,10 +50,35 @@ const UserProvider = (props) => {
   //function
   ////////////////////////////
   //#endregion
+
   const myContext = {
     ...myState,
     userLogin: login,
     userLogout: logOut,
+    siteSeting: {
+      lang: "en",
+      header: {
+        priceUint: [
+          { id: 1, name: "£ GBP" },
+          { id: 2, name: "€ Euro" },
+          { id: 3, name: "£ Pound Sterling" },
+          { id: 4, name: "$ US Dollar" },
+          { id: 5, name: "ريال" },
+        ],
+        Languages: [
+          { id: 1, name: "English" },
+          { id: 2, name: "Germany" },
+          { id: 3, name: "Persian" },
+        ],
+        menuItems: [
+          { id: 1, name: "My Compare", icon: "fa fa-random" },
+          { id: 2, name: "Wishlist", icon: "fa fa-heart" },
+          { id: 3, name: "My Account", icon: "fa fa-user" },
+          { id: 4, name: "Contact", icon: "fa fa-phone" },
+          { id: 5, name: "Checkout", icon: "fa fa-share" },
+        ],
+      },
+    },
   };
   return (
     <UserContext.Provider value={myContext}>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import "./App.scss";
-import TopNavbar from  "./components/topNavbar";
+import TopNavbar from "./components/topNavbar";
 import NavbarForm from "./components/navbar";
 import UserProvider from "./store/userProvider";
 import QuickMenu from "./components/quickMenu";
@@ -13,6 +13,7 @@ function App() {
     password: "",
     fullName: "hossein sheykhi",
   });
+
   return (
     <UserProvider>
       <div className="App">
@@ -24,7 +25,9 @@ function App() {
               <QuickMenu />
             </Col>
             <Col md={8}><MainBox /></Col> */}
-             <Col md={12}><MainBox /></Col> 
+            <Col md={12}>
+              <MainBox />
+            </Col>
           </Row>
         </Container>
       </div>
