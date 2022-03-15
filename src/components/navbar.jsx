@@ -2,30 +2,17 @@ import React, { useContext, useState } from "react";
 import {
   Navbar,
   Container,
-  Nav,
-  NavDropdown,
-  Form,
   Popover,
-  OverlayTrigger,
-  Button,
+  Badge
 } from "react-bootstrap";
 import UserContext from "../store/userContext";
-import CardDropDown from "./CardDropDown";
+import CartDropDown from "./CardDropDown";
 import styles from "./navbar.module.scss";
 const NavbarForm = () => {
   const UserCtx = useContext(UserContext);
 
   const [showCardDropDown, setShowCardDropDown] = useState(false);
-  const popover = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">My Cart</Popover.Header>
-      <Popover.Body>
-        And here's some <strong>amazing</strong> content. It's very engaging.
-        right?
-      </Popover.Body>
-    </Popover>
-  );
-  // bg="light"
+ 
   return (
     <Navbar expand="lg" bg="light" variant="light">
       <Container>
@@ -61,21 +48,17 @@ const NavbarForm = () => {
             )}
           </Navbar.Text>
 
-          {/* <OverlayTrigger trigger="hover" placement="bottom" overlay={popover}> 
-            <span className={styles["shopping-cart"]}>
-              <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-              Shopping Cart
-            </span>
-          </OverlayTrigger> */}
+       
           <span
             className={styles["shopping-cart"]}
             onMouseOver={() => setShowCardDropDown(true)}
             onMouseLeave={() => setShowCardDropDown(false)}
           >
             <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-            Shopping Cart
+            Shopping Cart 
+            <Badge pill  bg="danger">{UserCtx.cartItems.length}</Badge>
           </span>
-          <CardDropDown show={showCardDropDown} />
+          <CartDropDown show={showCardDropDown} />
         </Navbar.Collapse>
       </Container>
     </Navbar>

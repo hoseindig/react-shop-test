@@ -45,8 +45,12 @@
   }
   span {
     transition: 0.2s;
+    padding: 8px!important;
+    font-weight:bold ;
+    margin: 0 5px;
     &:hover {
       color: red;
     }
   }
 }
+ 
