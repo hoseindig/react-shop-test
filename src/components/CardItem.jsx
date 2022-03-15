@@ -1,4 +1,7 @@
+import { useContext } from "react";
+import UserContext from "../store/userContext";
 const CardItem = ({ items }) => {
+  const UserCtx = useContext(UserContext);
   return (
     <div>
       {items.map((i) => {
@@ -12,7 +15,9 @@ const CardItem = ({ items }) => {
                 <a href="product-details.html">{i.title}</a>
               </h3>
               <p className="price">
-                <span className="qty">{i.count} ×</span> £{i.price}
+                <span className="qty">{i.count} ×</span>{" "}
+                {UserCtx.siteSeting.priceUnitSelect.symbol}
+                {i.price}
               </p>
               <button className="cross-btn">
                 <i className="fa fa-times"></i>

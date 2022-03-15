@@ -5,42 +5,61 @@ import UserContext from "../store/userContext";
 
 import styles from "./topNavbar.module.scss";
 const TopNavbar = () => {
-  const [seletedLanguage, setseletedLanguage] = useState(1);
-  const [seletedpriceUint, setseletedpriceUint] = useState(4);
-  const userCnx = useContext(UserContext);
+  const userCntx = useContext(UserContext);
+  const [seletedLanguage, setseletedLanguage] = useState(
+    userCntx.siteSeting.languageSelect.id
+  );
+  const [seletedPriceUnit, setPriceUnit] = useState(
+    userCntx.siteSeting.priceUnitSelect.id
+  );
+  const [Languages, setLanguages] = useState(
+    userCntx.siteSeting.header.Languages
+  );
+
+  console.log("userCntx", userCntx);
   const cssText = "justify-content-end " + styles["basic-navbar-nav"];
   //   debugger;
-  const [Languages, setLanguages] = useState(
-    userCnx.siteSeting.header.Languages
-  );
-  const { menuItems, priceUint } = userCnx.siteSeting.header;
+  const { menuItems, priceUnit } = userCntx.siteSeting.header;
 
-  const getpriceUintName = () => {
-    return priceUint.find((i) => i.id === seletedpriceUint);
+  const getpriceUnitName = () => {
+    const select = priceUnit.find((i) => i.id === seletedPriceUnit);
+    return select;
   };
   const getLanguagesName = () => {
-    return Languages.find((i) => i.id === seletedLanguage);
+    const select = Languages.find((i) => i.id === seletedLanguage);
+    return select;
   };
   return (
     <Navbar>
       <Container>
-        {/* <Navbar.Brand href="#home">Navbar with text</Navbar.Brand> */}
-        <NavDropdown title={getpriceUintName().name} id="basic-nav-dropdown">
-          {priceUint.map((p) => {
+        {/* priceUnit */}
+        <NavDropdown title={getpriceUnitName().name} id="basic-nav-dropdown">
+          {priceUnit.map((p) => {
             return (
-              <NavDropdown.Item key={p.id} href="#action/3.1">
+              <NavDropdown.Item
+                key={p.id}
+                href="#action/3.1"
+                onClick={() => {
+                  userCntx.setPriceUnit(p);
+                  setPriceUnit(p.id);
+                }}
+              >
                 {p.name}
               </NavDropdown.Item>
             );
           })}
         </NavDropdown>
+        {/* Language */}
         <NavDropdown title={getLanguagesName().name} id="basic-nav-dropdown">
           {Languages.map((i) => {
             return (
               <NavDropdown.Item
                 key={i.id}
                 href="#action/3.1"
-                onClick={() => setseletedLanguage(i.id)}
+                onClick={() => {
+                  userCntx.setLanguage(i);
+                  setseletedLanguage(i.id);
+                }}
               >
                 {i.name}
               </NavDropdown.Item>
