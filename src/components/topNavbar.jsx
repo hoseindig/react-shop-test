@@ -16,7 +16,9 @@ const TopNavbar = () => {
     userCntx.siteSeting.header.Languages
   );
 
-  console.log("userCntx", userCntx);
+  // console.log("userCntx", userCntx);
+  // console.log("seletedLanguage", seletedLanguage);
+
   const cssText = "justify-content-end " + styles["basic-navbar-nav"];
   //   debugger;
   const { menuItems, priceUnit } = userCntx.siteSeting.header;
@@ -27,6 +29,11 @@ const TopNavbar = () => {
   };
   const getLanguagesName = () => {
     const select = Languages.find((i) => i.id === seletedLanguage);
+    return select;
+  };
+
+  const getTextByLanguagesSelcted = (list) => {
+    const select = list.find((i) => i.id === seletedLanguage);
     return select;
   };
   return (
@@ -72,7 +79,10 @@ const TopNavbar = () => {
             return (
               <Nav.Link href="#home" key={m.id}>
                 <i className={m.icon}></i>
-                {m.name}
+                {m.languagesOption
+                  ? getTextByLanguagesSelcted(m.languagesOption).text
+                  : m.name }
+                {/* {m.name} */}
               </Nav.Link>
             );
           })}

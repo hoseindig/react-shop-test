@@ -1,13 +1,27 @@
 import React, { useContext, useState } from "react";
 import { Navbar, Container, Popover, Badge } from "react-bootstrap";
+
 import UserContext from "../store/userContext";
 import CartDropDown from "./CardDropDown";
 import styles from "./navbar.module.scss";
+
 const NavbarForm = () => {
-  const UserCtx = useContext(UserContext);
-
+  const userCntx = useContext(UserContext);
+  const cart = userCntx.siteSeting.header.cart;
+  // debugger
   const [showCardDropDown, setShowCardDropDown] = useState(false);
+ 
+  const seletedLanguage= userCntx.siteSeting.languageSelect.id
 
+  // console.log("seletedLanguage", seletedLanguage,userCntx.siteSeting.languageSelect.id);
+  // console.log("cart",cart);
+
+
+  const getLanguageText = (list) => {
+    const select = list.find((i) => i.id === seletedLanguage);
+    // debugger
+    return select;
+  };
   return (
     <Navbar expand="lg">
       <Container>
@@ -25,15 +39,15 @@ const NavbarForm = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end login-btn">
           <Navbar.Text>
-            {!UserCtx.user.userId && (
-              <span onClick={UserCtx.userLogin}>Login</span>
+            {!userCntx.user.userId && (
+              <span onClick={userCntx.userLogin}>Login</span>
             )}
           </Navbar.Text>
           <Navbar.Text>
-            {UserCtx.user.userId && (
+            {userCntx.user.userId && (
               <div className={styles["login-info"]}>
-                <p href="#login">{UserCtx.user.fullName}</p>
-                <p onClick={UserCtx.userLogout}>Logout</p>
+                <p href="#login">{userCntx.user.fullName}</p>
+                <p onClick={userCntx.userLogout}>Logout</p>
               </div>
             )}
           </Navbar.Text>
@@ -44,11 +58,12 @@ const NavbarForm = () => {
             onMouseLeave={() => setShowCardDropDown(false)}
           >
             <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-            Shopping Cart
+            {/* Shopping Cart */}
+            {getLanguageText(cart.languagesOption).text}
             <Badge pill bg="danger">
-              {UserCtx.cartItems.length}
+              {userCntx.cartItems.length}
             </Badge>
-            <p> {UserCtx.siteSeting.priceUnitSelect.symbol} 11555</p>
+            <p> {userCntx.siteSeting.priceUnitSelect.symbol} 11555</p>
           </span>
           <CartDropDown show={showCardDropDown} />
         </Navbar.Collapse>

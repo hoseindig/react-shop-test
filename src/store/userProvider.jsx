@@ -11,7 +11,7 @@ const defaultState = {
   siteSeting: {
     lang: "en",
     priceUnitSelect: { id: 4, name: "$ US Dollar", symbol: "$" },
-    languageSelect: { id: 2, name: "English" },
+    languageSelect: { id: 1, name: "English" },
     header: {
       priceUnit: [
         { id: 1, name: "£ GBP", symbol: "£" },
@@ -22,16 +22,76 @@ const defaultState = {
       ],
       Languages: [
         { id: 1, name: "English" },
-        { id: 2, name: "Germany" },
+        // { id: 2, name: "Germany" },
         { id: 3, name: "Persian" },
       ],
       menuItems: [
-        { id: 1, name: "My Compare", icon: "fa fa-random" },
-        { id: 2, name: "Wishlist", icon: "fa fa-heart" },
-        { id: 3, name: "My Account", icon: "fa fa-user" },
-        { id: 4, name: "Contact", icon: "fa fa-phone" },
-        { id: 5, name: "Checkout", icon: "fa fa-share" },
+        {
+          id: 1,
+          name: "My Compare",
+          icon: "fa fa-random",
+          languagesOption: [
+            { id: 1, text: "My Compare" },
+            { id: 3, text: "مقایسه" },
+          ],
+        },
+        {
+          id: 2,
+          name: "Wishlist",
+          icon: "fa fa-heart",
+          languagesOption: [
+            { id: 1, text: "Wishlist" },
+            { id: 3, text: "مورد علاقه" },
+          ],
+        },
+        {
+          id: 3,
+          name: "My Account",
+          icon: "fa fa-user",
+          languagesOption: [
+            { id: 1, text: "My Account" },
+            { id: 3, text: "حساب کاربری" },
+          ],
+        },
+        {
+          id: 4,
+          name: "Contact",
+          icon: "fa fa-phone",
+          languagesOption: [
+            { id: 1, text: "Contact" },
+            { id: 3, text: "تماس با ما" },
+          ],
+        },
+        {
+          id: 5,
+          name: "Checkout",
+          icon: "fa fa-share",
+          languagesOption: [
+            { id: 1, text: "Checkout" },
+            { id: 3, text: "بازبینی" },
+          ],
+        },
       ],
+      cart:{
+        languagesOption: [
+          { id: 1, text: "Shopping Cart" },
+          { id: 3, text: "سبد خرید" },
+        ],
+        dropDown:{
+          checkOutBtn:{
+            languagesOption: [
+              { id: 1, text: "Check Out" },
+              { id: 3, text: "وارسی" },
+            ],
+          },
+          viewCartBtn:{
+            languagesOption: [
+              { id: 1, text: "View Cart" },
+              { id: 3, text: "مشاهده سبد خرید" },
+            ],
+          }
+        }
+      }
     },
   },
 };
@@ -55,7 +115,7 @@ const UserReducer = (state, action) => {
   }
 
   if (action.type === "SETPriceUnit") {
-    debugger;
+    // debugger;
     const siteSeting = {
       ...state.siteSeting,
       priceUnitSelect: action.item,
@@ -63,7 +123,7 @@ const UserReducer = (state, action) => {
     return { ...state, siteSeting };
   }
   if (action.type === "SETLanguage") {
-    debugger;
+    // debugger;
     const siteSeting = {
       ...state.siteSeting,
       languageSelect: action.item,
