@@ -16,11 +16,8 @@ const TopNavbar = () => {
     userCntx.siteSeting.header.Languages
   );
 
-  // console.log("userCntx", userCntx);
-  // console.log("seletedLanguage", seletedLanguage);
-
   const cssText = "justify-content-end " + styles["basic-navbar-nav"];
-  //   debugger;
+
   const { menuItems, priceUnit } = userCntx.siteSeting.header;
 
   const getpriceUnitName = () => {
