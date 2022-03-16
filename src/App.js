@@ -20,15 +20,18 @@ function App() {
   return (
     <UserProvider>
       <div className="App">
-        <TopNavbar />
-        <NavbarForm />
         {/* <MainMenuNavbar /> */}
-        <Container>
+        <Container fluid>
           <Row>
-            {/* <Col md={3}>
-              <QuickMenu />
+            <Col>
+              <TopNavbar />
             </Col>
-            <Col md={8}><MainBox /></Col> */}
+          </Row>
+          <Row>
+            <NavbarForm />
+          </Row>
+
+          <Row>
             <Col md={12}>
               <MainBox />
             </Col>
