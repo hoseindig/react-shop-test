@@ -27,7 +27,7 @@ const CarouselBox = () => {
     },
   ];
   return (
-    <Carousel>
+    <Carousel className={styles.box}>
       {carousels.map((item) => {
         return (
           <Carousel.Item key={item.img} interval={item.interval}>
