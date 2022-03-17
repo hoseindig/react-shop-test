@@ -27,24 +27,36 @@ const Section = () => {
       img: "product-13.jpg",
       text: "BOOK: Do You Really Need It? This ",
     },
- {
+    {
       id: 4,
       title: "Lpple",
       img: "product-2.jpg",
       text: "Revolutionize Your BOOK With ",
     },
 
-     {
-      id:5,
+    {
+      id: 5,
       title: "Jpple",
       img: "product-10.jpg",
       text: "Revolutionize Your BOOK With ",
     },
     {
-      id:6,
+      id: 6,
       title: "Wpple",
       img: "product-3.jpg",
       text: "Revolutionize Your BOOK With ",
+    },
+    {
+      id: 7,
+      title: "Hpple 2",
+      img: "product-5.jpg",
+      text: "a Half Very Simple Things You To",
+    },
+    {
+      id: 8,
+      title: "Bpple 2",
+      img: "product-8.jpg",
+      text: "  BOOK: Do You Really Need It? This ",
     },
   ];
   return (
@@ -52,7 +64,9 @@ const Section = () => {
       <div className={styles.header}>
         <h1> arts & photography books</h1>
       </div>
-      <CardGroupBox cards={cards} />
+      <Container>
+        <CardGroupBox cards={cards} />
+      </Container>
     </div>
   );
 };
