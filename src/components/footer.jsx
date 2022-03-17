@@ -2,7 +2,7 @@ import { Card, Button, Container, CardGroup } from "react-bootstrap";
 
 const Footer = () => {
   return (
-    <Container className="footer-bottom">
+    <Container fluid className="footer-bottom">
       <p className="copyright-heading">
         Suspendisse in auctor augue. Cras fermentum est ac fermentum tempor.
         Etiam vel magna volutpat, posuere eros
