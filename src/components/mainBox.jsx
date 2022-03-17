@@ -11,6 +11,60 @@ const MainBox = () => {
   const categorys = [
     { id: 1, name: "art" },
     { id: 2, name: "photography" },
+    { id: 3, name: "biographies " },
+  ];
+  const client = [
+    {
+      id: 1,
+      title: "Epple",
+      img: "client-1.png",
+      folder:'client',
+      price: 51.2,
+      priceOld: 51.2,
+      priceDiscount: "20%",
+      text: "  What You Can Learn From Bill Gates",
+    },
+    {
+        id: 2,
+        title: "Epple",
+        img: "client-2.png",
+        folder:'client',
+        price: 51.2,
+        priceOld: 51.2,
+        priceDiscount: "20%",
+        text: "  What You Can Learn From Bill Gates",
+      },
+      {
+        id: 3,
+        title: "Epple",
+        img: "client-3.png",
+        folder:'client',
+        price: 51.2,
+        priceOld: 51.2,
+        priceDiscount: "20%",
+        text: "  What You Can Learn From Bill Gates",
+      },
+      {
+        id: 4,
+        title: "Epple",
+        img: "client-4.png",
+        folder:'client',
+        price: 51.2,
+        priceOld: 51.2,
+        priceDiscount: "20%",
+        text: "  What You Can Learn From Bill Gates",
+      },
+      {
+        id: 5,
+        title: "Epple",
+        img: "client-5.png",
+        folder:'client',
+        price: 51.2,
+        priceOld: 51.2,
+        priceDiscount: "20%",
+        text: "  What You Can Learn From Bill Gates",
+      },
+
   ];
   const cards = [
     {
@@ -94,7 +148,7 @@ const MainBox = () => {
       mostViewedProducts: false,
       newArrivals: true,
       featuredProducts: true,
-      category: 1,
+      category: 3,
       isSpecialOffer: false,
     },
     {
@@ -108,7 +162,7 @@ const MainBox = () => {
       mostViewedProducts: false,
       newArrivals: true,
       featuredProducts: true,
-      category: 1,
+      category: 3,
       isSpecialOffer: false,
     },
     {
@@ -136,7 +190,7 @@ const MainBox = () => {
       mostViewedProducts: true,
       newArrivals: true,
       featuredProducts: false,
-      category: 5,
+      category: 1,
       isSpecialOffer: false,
     },
     {
@@ -150,7 +204,7 @@ const MainBox = () => {
       mostViewedProducts: true,
       newArrivals: true,
       featuredProducts: false,
-      category: 5,
+      category: 1,
       isSpecialOffer: false,
     },
     {
@@ -164,7 +218,7 @@ const MainBox = () => {
       mostViewedProducts: true,
       newArrivals: true,
       featuredProducts: false,
-      category: 6,
+      category: 1,
       isSpecialOffer: false,
     },
     {
@@ -178,7 +232,35 @@ const MainBox = () => {
       mostViewedProducts: false,
       newArrivals: true,
       featuredProducts: true,
-      category: 6,
+      category: 1,
+      isSpecialOffer: false,
+    },
+    {
+      id: 13,
+      title: "Hpple 4",
+      img: "product-5.jpg",
+      text: "a Half Very Simple Things You To",
+      price: 51.2,
+      priceOld: 51.2,
+      priceDiscount: "20%",
+      mostViewedProducts: true,
+      newArrivals: true,
+      featuredProducts: false,
+      category: 3,
+      isSpecialOffer: false,
+    },
+    {
+      id: 14,
+      title: "Bpple 4",
+      img: "product-8.jpg",
+      text: "  BOOK: Do You Really Need It? This ",
+      price: 51.2,
+      priceOld: 51.2,
+      priceDiscount: "20%",
+      mostViewedProducts: false,
+      newArrivals: true,
+      featuredProducts: true,
+      category: 3,
       isSpecialOffer: false,
     },
   ];
@@ -191,6 +273,12 @@ const MainBox = () => {
         title="arts & photography books"
         cards={cards.filter((i) => i.category === 1)}
       />
+      <Section
+        title="BIOGRAPHIES BOOKS"
+        cards={cards.filter((i) => i.category === 3)}
+      />
+
+
       <FeaturesBox />
       <PromoImage />
       <Container>
@@ -203,6 +291,11 @@ const MainBox = () => {
           </Col>
         </Row>
       </Container>
+      <Section
+        title="CLIENT TESTIMONIALS"
+        cards={client}
+        bigCard={true}
+      />
     </div>
   );
 };

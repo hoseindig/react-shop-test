@@ -3,7 +3,7 @@ import styles from "./CardGroupBox.module.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // https://www.npmjs.com/package/react-multi-carousel
-const CardGroupCarouselBox = ({ cards, responsiveConfig }) => {
+const CardGroupCarouselBox = ({ cards, bigCard, responsiveConfig }) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -36,7 +36,7 @@ const CardGroupCarouselBox = ({ cards, responsiveConfig }) => {
           return (
             <div key={item.id}>
               <Card
-                style={{ width: "18rem" }}
+                style={{ width: bigCard ? "100%" : "18rem" }}
                 key={item.id}
                 className={styles["product-card"]}
               >
@@ -48,7 +48,14 @@ const CardGroupCarouselBox = ({ cards, responsiveConfig }) => {
                     <h3>{item.text}</h3>
                   </Card.Text>
                 </Card.Body>
-                <Card.Img variant="top" src={"images/products/" + item.img} />
+                <Card.Img
+                  variant="top"
+                  src={
+                    item.folder
+                      ? "images/" + item.folder + "/" + item.img
+                      : "images/products/" + item.img
+                  }
+                />
                 <Card.Body>
                   <Card.Text className={styles["price-block"]}>
                     <span className={styles["price"]}>£51.20</span>
