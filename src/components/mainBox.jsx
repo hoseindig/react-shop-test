@@ -266,7 +266,7 @@ const MainBox = () => {
   ];
   return (
     <div className={styles["main-box"]}>
-      <h1>Main Box</h1>
+      {/* <h1>Main Box</h1> */}
       <CarouselBox />
       <CategoryGallery />
       <Section
