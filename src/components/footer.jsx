@@ -13,12 +13,12 @@ const Footer = () => {
       <div className="copyright-text">
         <p> Copyright © 2022</p>
         <a href="#" class="author">
-        Hossein Shykhi (iran) +989304535469 (USA)  +1 (717) 638-8195
+        Hossein Sheykhi (iran) +989304535469 (USA)  +1 (717) 638-8195
         </a>
         <p>
           All Right Reserved.
           {/* </br> */}
-          Design By Hossein Shykhi hoseinx@gmail.com
+          Design By Hossein Sheykhi hoseinx@gmail.com
         </p>
       </div>
     </Container>
