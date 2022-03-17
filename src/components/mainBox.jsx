@@ -7,6 +7,7 @@ import PromoImage from "./PromoImage";
 import { Row, Col, Container } from "react-bootstrap";
 import SpecialOffer from "./SpecialOffer";
 import ProductsInTab from "./ProductsInTab";
+import Footer from "./footer";
 const MainBox = () => {
   const categorys = [
     { id: 1, name: "art" },
@@ -18,53 +19,52 @@ const MainBox = () => {
       id: 1,
       title: "Epple",
       img: "client-1.png",
-      folder:'client',
+      folder: "client",
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
       text: "  What You Can Learn From Bill Gates",
     },
     {
-        id: 2,
-        title: "Epple",
-        img: "client-2.png",
-        folder:'client',
-        price: 51.2,
-        priceOld: 51.2,
-        priceDiscount: "20%",
-        text: "  What You Can Learn From Bill Gates",
-      },
-      {
-        id: 3,
-        title: "Epple",
-        img: "client-3.png",
-        folder:'client',
-        price: 51.2,
-        priceOld: 51.2,
-        priceDiscount: "20%",
-        text: "  What You Can Learn From Bill Gates",
-      },
-      {
-        id: 4,
-        title: "Epple",
-        img: "client-4.png",
-        folder:'client',
-        price: 51.2,
-        priceOld: 51.2,
-        priceDiscount: "20%",
-        text: "  What You Can Learn From Bill Gates",
-      },
-      {
-        id: 5,
-        title: "Epple",
-        img: "client-5.png",
-        folder:'client',
-        price: 51.2,
-        priceOld: 51.2,
-        priceDiscount: "20%",
-        text: "  What You Can Learn From Bill Gates",
-      },
-
+      id: 2,
+      title: "Epple",
+      img: "client-2.png",
+      folder: "client",
+      price: 51.2,
+      priceOld: 51.2,
+      priceDiscount: "20%",
+      text: "  What You Can Learn From Bill Gates",
+    },
+    {
+      id: 3,
+      title: "Epple",
+      img: "client-3.png",
+      folder: "client",
+      price: 51.2,
+      priceOld: 51.2,
+      priceDiscount: "20%",
+      text: "  What You Can Learn From Bill Gates",
+    },
+    {
+      id: 4,
+      title: "Epple",
+      img: "client-4.png",
+      folder: "client",
+      price: 51.2,
+      priceOld: 51.2,
+      priceDiscount: "20%",
+      text: "  What You Can Learn From Bill Gates",
+    },
+    {
+      id: 5,
+      title: "Epple",
+      img: "client-5.png",
+      folder: "client",
+      price: 51.2,
+      priceOld: 51.2,
+      priceDiscount: "20%",
+      text: "  What You Can Learn From Bill Gates",
+    },
   ];
   const cards = [
     {
@@ -278,7 +278,6 @@ const MainBox = () => {
         cards={cards.filter((i) => i.category === 3)}
       />
 
-
       <FeaturesBox />
       <PromoImage />
       <Container>
@@ -291,11 +290,8 @@ const MainBox = () => {
           </Col>
         </Row>
       </Container>
-      <Section
-        title="CLIENT TESTIMONIALS"
-        cards={client}
-        bigCard={true}
-      />
+      <Section title="CLIENT TESTIMONIALS" cards={client} bigCard={true} />
+      <Footer />
     </div>
   );
 };
