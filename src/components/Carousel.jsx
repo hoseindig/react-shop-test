@@ -32,7 +32,7 @@ const CarouselBox = () => {
         return (
           <Carousel.Item key={item.img} interval={item.interval}>
             <img
-              className="d-block w-100"
+              className={"d-block w-100 "+styles.Image }
               src={"images/slide/" + item.img}
               alt={item.alt}
             />

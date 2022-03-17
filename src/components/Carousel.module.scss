@@ -2,8 +2,12 @@
 //   max-height: 650px;
 //   object-fit: cover;
 // }
-.box{
+.box {
   margin: 20px 0;
+  .Image {
+    max-height: 50vh;
+    object-fit: cover;
+  }
 }
 .myCaption {
   h3 {
@@ -11,6 +15,5 @@
   }
   p {
     filter: invert(1);
-
   }
 }
