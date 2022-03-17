@@ -18,7 +18,7 @@ const NavbarForm = () => {
   const handleScroll = () => {
     console.log("handleScroll");
     const position = window.pageYOffset;
-    position >= 170 ? setBarVisibility(true) : setBarVisibility(false);
+    position >= 50 ? setBarVisibility(true) : setBarVisibility(false);
     setSrollPosition(position);
   };
 
