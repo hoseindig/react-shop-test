@@ -3,7 +3,7 @@ import styles from "./CardGroupBox.module.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // https://www.npmjs.com/package/react-multi-carousel
-const CardGroupBox = ({ cards }) => {
+const CardGroupBox = ({ cards, responsiveConfig }) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -26,7 +26,7 @@ const CardGroupBox = ({ cards }) => {
   return (
     <div>
       <Carousel
-        responsive={responsive}
+        responsive={responsiveConfig ? responsiveConfig : responsive}
         autoPlay={true}
         autoPlaySpeed={5000}
         showDots={true}
