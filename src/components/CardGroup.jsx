@@ -25,7 +25,13 @@ const CardGroupBox = ({ cards }) => {
   };
   return (
     <div>
-      <Carousel responsive={responsive}>
+      <Carousel
+        responsive={responsive}
+        autoPlay={true}
+        autoPlaySpeed={5000}
+        showDots={true}
+        infinite={true}
+      >
         {cards.map((item) => {
           return (
             <div key={item.id}>
