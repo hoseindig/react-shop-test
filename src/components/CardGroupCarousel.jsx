@@ -2,6 +2,9 @@ import { Card, Button, Container, CardGroup } from "react-bootstrap";
 import styles from "./CardGroupBox.module.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
+import CardBox from "./CardCarousel/Card";
+import LargCardBox from "./LargCardBox";
 // https://www.npmjs.com/package/react-multi-carousel
 const CardGroupCarouselBox = ({ cards, bigCard, responsiveConfig }) => {
   const responsive = {
@@ -35,35 +38,11 @@ const CardGroupCarouselBox = ({ cards, bigCard, responsiveConfig }) => {
         {cards.map((item) => {
           return (
             <div key={item.id}>
-              <Card
-                style={{ width: bigCard ? "100%" : "18rem" }}
-                key={item.id}
-                className={styles["product-card"]}
-              >
-                <Card.Body>
-                  <Card.Title className={styles["author"]}>
-                    {item.title}
-                  </Card.Title>
-                  <Card.Text>
-                    <h3>{item.text}</h3>
-                  </Card.Text>
-                </Card.Body>
-                <Card.Img
-                  variant="top"
-                  src={
-                    item.folder
-                      ? "images/" + item.folder + "/" + item.img
-                      : "images/products/" + item.img
-                  }
-                />
-                <Card.Body>
-                  <Card.Text className={styles["price-block"]}>
-                    <span className={styles["price"]}>£51.20</span>
-                    <del className={styles["price-old"]}>£51.20</del>
-                    <span className={styles["price-discount"]}>20%</span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+              {bigCard ? (
+                <LargCardBox item={item} bigCard={bigCard} />
+              ) : (
+                <CardBox item={item} bigCard={bigCard} />
+              )}
             </div>
           );
         })}
