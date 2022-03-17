@@ -18,7 +18,7 @@ const defaultState = {
         { id: 2, name: "€ Euro", symbol: "€ " },
         { id: 3, name: "£ Pound Sterling", symbol: "£" },
         { id: 4, name: "$ US Dollar", symbol: "$" },
-        { id: 5, name: "ريال", symbol: "ريال" },
+        { id: 5, name: "ريال", symbol: " Rls " },
       ],
       Languages: [
         { id: 1, name: "English" },
