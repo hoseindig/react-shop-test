@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Navbar, Container, Popover, Badge } from "react-bootstrap";
 
 import UserContext from "../store/userContext";
@@ -10,12 +10,31 @@ const NavbarForm = () => {
   const cart = userCntx.siteSeting.header.cart;
   // debugger
   const [showCardDropDown, setShowCardDropDown] = useState(false);
- 
-  const seletedLanguage= userCntx.siteSeting.languageSelect.id
+
+  /************************** */
+  // nav sticky  scroll        //
+  const [barVisibility, setBarVisibility] = useState(false);
+  const [scrollPosition, setSrollPosition] = useState(0);
+  const handleScroll = () => {
+    console.log("handleScroll");
+    const position = window.pageYOffset;
+    position >= 170 ? setBarVisibility(true) : setBarVisibility(false);
+    setSrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  /***************** */
+
+  const seletedLanguage = userCntx.siteSeting.languageSelect.id;
 
   // console.log("seletedLanguage", seletedLanguage,userCntx.siteSeting.languageSelect.id);
   // console.log("cart",cart);
-
 
   const getLanguageText = (list) => {
     const select = list.find((i) => i.id === seletedLanguage);
@@ -23,7 +42,7 @@ const NavbarForm = () => {
     return select;
   };
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" className={barVisibility ? "showBar" : "hideBar"}>
       <Container>
         <Navbar.Brand href="#home">
           <img src="images/logo.jpg" alt="" />
