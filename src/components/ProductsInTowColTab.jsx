@@ -33,8 +33,8 @@ const ProductsInTowColTab = ({ cards, towRowArray = [], filterBy }) => {
         showDots={true}
         infinite={true}
       >
-        {towRowArray.map((item) => {
-          return <CardGroupBox cards={item.filter((i) => i[filterBy])} />;
+        {towRowArray.map((item,index) => {
+          return <CardGroupBox key={index} cards={item.filter((i) => i[filterBy])} />;
         })}
       </Carousel>
     </div>
