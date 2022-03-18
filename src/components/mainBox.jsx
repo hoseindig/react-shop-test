@@ -5,8 +5,8 @@ import Section from "./section";
 import FeaturesBox from "./featuresBox";
 import PromoImage from "./PromoImage";
 import { Row, Col, Container } from "react-bootstrap";
-import SpecialOffer from "./SpecialOffer";
-import ProductsInTab from "./ProductsInTab";
+import ProductsInTabAndSpecialOffer from "./ProductsInTabAndSpecialOffer";
+
 import Footer from "./footer";
 const MainBox = () => {
   const categorys = [
@@ -266,8 +266,8 @@ const MainBox = () => {
   ];
   return (
     <Row className={styles["main-box"]}>
-
-        <CarouselBox />
+      <CarouselBox />
+      <Container>
         <CategoryGallery />
         <Section
           title="arts & photography books"
@@ -282,17 +282,10 @@ const MainBox = () => {
 
         <FeaturesBox />
         <PromoImage />
-        <Container >
-          <Row>
-            <Col md={3}>
-              <SpecialOffer cards={cards.filter((i) => i.isSpecialOffer)} />
-            </Col>
-            <Col md={9}>
-              <ProductsInTab cards={cards} />
-            </Col>
-          </Row>
-        </Container>
+        <ProductsInTabAndSpecialOffer cards={cards} />
+
         <Section title="CLIENT TESTIMONIALS" cards={client} bigCard={true} />
+      </Container>
     </Row>
   );
 };
