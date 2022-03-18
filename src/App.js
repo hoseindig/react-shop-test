@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 
 import "./App.scss";
@@ -9,18 +10,18 @@ import UserProvider from "./store/userProvider";
 import QuickMenu from "./components/quickMenu";
 
 import MainBox from "./components/mainBox";
-
+import Login from "./components/Login";
+import Footer from "./components/footer";
 function App() {
   const userData = useState({
     usewrname: "",
     password: "",
     fullName: "hossein sheykhi",
   });
-
+  // style={{height: "calc(100vh - 344px)"}}
   return (
     <UserProvider>
       <div className="App">
-        {/* <MainMenuNavbar /> */}
         <Container fluid>
           <Row>
             <Col>
@@ -30,11 +31,25 @@ function App() {
           <Row>
             <NavbarForm />
           </Row>
-
+          {/* <MainMenuNavbar /> */}
+          {/* <Row> */}
+            <Routes>
+              <Route
+                path="/"
+                exec
+                element={
+                  <Row>
+                    <Col md={12}>
+                      <MainBox />
+                    </Col>
+                  </Row>
+                }
+              />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          {/* </Row> */}
           <Row>
-            <Col md={12}>
-              <MainBox />
-            </Col>
+            <Footer />
           </Row>
         </Container>
       </div>
