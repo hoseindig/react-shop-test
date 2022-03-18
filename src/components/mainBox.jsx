@@ -272,10 +272,12 @@ const MainBox = () => {
       <Section
         title="arts & photography books"
         cards={cards.filter((i) => i.category === 1)}
+        centerMode={true}
       />
       <Section
         title="BIOGRAPHIES BOOKS"
         cards={cards.filter((i) => i.category === 3)}
+        centerMode={true}
       />
 
       <FeaturesBox />

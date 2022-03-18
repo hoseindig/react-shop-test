@@ -1,7 +1,7 @@
 import styles from "./Section.module.scss";
 import { Card, Button, Container, CardGroup } from "react-bootstrap";
 import CardGroupCarouselBox from "./CardGroupCarousel";
-const Section = ({ cards, title, bigCard }) => {
+const Section = ({ cards, title, bigCard, centerMode }) => {
   const responsiveConfig = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -30,6 +30,7 @@ const Section = ({ cards, title, bigCard }) => {
         <CardGroupCarouselBox
           cards={cards}
           bigCard={bigCard}
+          centerMode={centerMode ? true : false}
           responsiveConfig={bigCard ? responsiveConfig : null}
         />
       </Container>

@@ -6,7 +6,13 @@ import "react-multi-carousel/lib/styles.css";
 import CardBox from "./CardCarousel/Card";
 import LargCardBox from "./LargCardBox";
 // https://www.npmjs.com/package/react-multi-carousel
-const CardGroupCarouselBox = ({ cards, bigCard, responsiveConfig }) => {
+// https://www.npmjs.com/package/springstech-react-multi-carousel
+const CardGroupCarouselBox = ({
+  cards,
+  bigCard,
+  responsiveConfig,
+  centerMode,
+}) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -15,7 +21,7 @@ const CardGroupCarouselBox = ({ cards, bigCard, responsiveConfig }) => {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4,
+      items: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -34,6 +40,8 @@ const CardGroupCarouselBox = ({ cards, bigCard, responsiveConfig }) => {
         autoPlaySpeed={5000}
         showDots={true}
         infinite={true}
+        dotListClass="custom-dot-list-style"
+        centerMode={centerMode ? true : false}
       >
         {cards.map((item) => {
           return (
