@@ -32,6 +32,8 @@ const ProductsInTowColTab = ({ cards, towRowArray = [], filterBy }) => {
         autoPlaySpeed={5000}
         showDots={true}
         infinite={true}
+        dotListClass="custom-dot-list-style"
+
       >
         {towRowArray.map((item,index) => {
           return <CardGroupBox key={index} cards={item.filter((i) => i[filterBy])} />;
