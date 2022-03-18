@@ -8,7 +8,7 @@ import styles from "./navbar.module.scss";
 const NavbarForm = () => {
   const userCntx = useContext(UserContext);
   const cart = userCntx.siteSeting.header.cart;
-  const{setbarVisibilityCntx} = userCntx.siteSeting
+  const { setbarVisibilityCntx } = userCntx.siteSeting;
   // debugger
   const [showCardDropDown, setShowCardDropDown] = useState(false);
 
@@ -31,9 +31,9 @@ const NavbarForm = () => {
     };
   }, []);
 
-  useEffect(()=>{
-    setbarVisibilityCntx(barVisibility)
-  },[barVisibility])
+  useEffect(() => {
+    setbarVisibilityCntx(barVisibility);
+  }, [barVisibility]);
   /***************** */
   const seletedLanguage = userCntx.siteSeting.languageSelect.id;
 
@@ -48,21 +48,22 @@ const NavbarForm = () => {
         <Navbar.Brand href="#home">
           <img src="images/logo.jpg" alt="" />
         </Navbar.Brand>
-
+        {/* search */}
         <div className={styles.serachBox}>
           <input type="text" />
           <button>
             <i className="fa fa-search" aria-hidden="true"></i>
           </button>
         </div>
-
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end login-btn">
+          {/* login */}
           <Navbar.Text>
             {!userCntx.user.userId && (
               <span onClick={userCntx.userLogin}>Login</span>
             )}
           </Navbar.Text>
+          {/* Logout */}
           <Navbar.Text>
             {userCntx.user.userId && (
               <div className={styles["login-info"]}>
@@ -72,7 +73,9 @@ const NavbarForm = () => {
             )}
           </Navbar.Text>
 
-          <span
+          {/* Shopping Cart */}
+          <Navbar.Text
+            id="login-btn-navbar"
             className={styles["shopping-cart"]}
             onMouseOver={() => setShowCardDropDown(true)}
             onMouseLeave={() => setShowCardDropDown(false)}
@@ -84,7 +87,8 @@ const NavbarForm = () => {
               {userCntx.cartItems.length}
             </Badge>
             <p> {userCntx.siteSeting.priceUnitSelect.symbol} 11555</p>
-          </span>
+          </Navbar.Text>
+          {/* Cart DropDown */}
           <CartDropDown show={showCardDropDown} />
         </Navbar.Collapse>
       </Container>

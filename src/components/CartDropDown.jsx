@@ -1,24 +1,65 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useLayoutEffect } from "react";
+
 import UserContext from "../store/userContext";
 import CardItem from "./CardItem";
+
 const CardDropDown = ({ show }) => {
   const [showCard, setShowCard] = useState(false);
+
   const UserCntx = useContext(UserContext);
+
   const cart = UserCntx.siteSeting.header.cart;
   const languageSelect = UserCntx.siteSeting.languageSelect;
   const { barVisibility } = UserCntx.siteSeting;
-  // console.log("CardItem", cart, languageSelect);
+
   const getLanguageText = (list) => {
     const select = list.find((i) => i.id === languageSelect.id);
     return select;
   };
-  // debugger;
+  /////////////////////////
+  //get and set cart posyion :|
+  const element = document.getElementById("login-btn-navbar");
+  let bodyRect = document.body.getBoundingClientRect();
+  let elemRect;
+  let offset = {};
+  if (element) {
+    elemRect = element.getBoundingClientRect();
+    offset.top = elemRect.top - bodyRect.top;
+    offset.right = elemRect.right - bodyRect.right;
+    offset.left = elemRect.left - bodyRect.left;
+    if (elemRect.left + 360 > bodyRect.width)
+      offset.left = bodyRect.width - 360;
+    // debugger;
+    // console.log("Element is " + offset.left + " vertical pixels from <body>");
+  }
+
+  function useWindowSize() {
+    const [size, setSize] = useState([0, 0]);
+    useLayoutEffect(() => {
+      function updateSize() {
+        setSize([window.innerWidth, window.innerHeight]);
+      }
+      window.addEventListener("resize", updateSize);
+      updateSize();
+      return () => window.removeEventListener("resize", updateSize);
+    }, []);
+    return size;
+  }
+
+  function ShowWindowDimensions(props) {
+    const [width, height] = useWindowSize();
+    // console.log(`Window size: ${width} x ${height}`); //<span>Window size: {width} x {height}</span>;
+  }
+  ShowWindowDimensions();
+  /////////////////////////
+
   return (
     <div
       className="cart-dropdown-block"
       style={{
-        opacity: show ? 1 : showCard ? 1 : 1,
+        opacity: show ? 1 : showCard ? 1 : 0,
         top: barVisibility ? 107 : 190,
+        left: offset.left,
       }}
       onMouseOver={() => setShowCard(true)}
       onMouseLeave={() => setShowCard(false)}
