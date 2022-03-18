@@ -1,0 +1,32 @@
+.login-form {
+//   margin: 20%;
+  border: 1px solid #e3e3e3;
+  padding: 45px 20px 20px 20px;
+  text-align: left;
+  border-radius: 5px;
+  label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+  input {
+    height: 40px;
+    color: #7b7b7b;
+    font-size: 13px;
+  }
+}
+
+.login-title {
+  line-height: 23px;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom: 18px;
+  color: #333;
+  font-weight: 600;
+}
+.main-box{
+    min-height: 400px;
+    height: calc( 100vh - 562px);
+}

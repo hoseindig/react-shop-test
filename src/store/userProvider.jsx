@@ -1,7 +1,7 @@
 import UserContext from "./userContext";
 
 import React, { useReducer } from "react";
-
+import { useNavigate } from "react-router-dom";
 const defaultState = {
   items: [],
   total: 0,
@@ -144,6 +144,7 @@ const UserReducer = (state, action) => {
 //#endregion
 
 const UserProvider = (props) => {
+  const navigate = useNavigate();
   const [myState, dispachState] = useReducer(UserReducer, defaultState);
   //#region
   ////////////////////////////
@@ -153,6 +154,8 @@ const UserProvider = (props) => {
     dispachState({
       type: "LOGIN",
     });
+    navigate("/");
+    // debugger
   };
   const logOut = () => {
     console.log("LOGOUT");

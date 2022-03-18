@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Navbar, Container, Popover, Badge } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 import UserContext from "../store/userContext";
 import CartDropDown from "./CartDropDown";
 import styles from "./navbar.module.scss";
@@ -45,8 +45,10 @@ const NavbarForm = () => {
   return (
     <Navbar expand="lg" className={barVisibility ? "showBar" : "hideBar"}>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
+          <Link to="/">
           <img src="images/logo.jpg" alt="" />
+          </Link>
         </Navbar.Brand>
         {/* search */}
         <div className={styles.serachBox}>
@@ -60,7 +62,8 @@ const NavbarForm = () => {
           {/* login */}
           <Navbar.Text>
             {!userCntx.user.userId && (
-              <span onClick={userCntx.userLogin}>Login</span>
+              // <span onClick={userCntx.userLogin}>Login</span>
+              <Link to={"/login"}>Login</Link>
             )}
           </Navbar.Text>
           {/* Logout */}
