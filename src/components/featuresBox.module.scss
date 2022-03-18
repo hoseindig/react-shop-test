@@ -1,21 +1,19 @@
-.features {
-  .feature-box {
-    border: 2px solid #e5e5e5;
-    padding: 15px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    .icon {
-      margin-right: 10px;
-      color: #62ab00;
-      font-size: 34px;
-      line-height: 40px;
-    }
-    .text {
-      text-align: left;
-    }
+.feature-box {
+  border: 2px solid #e5e5e5;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  .icon {
+    margin-right: 10px;
+    color: #62ab00;
+    font-size: 34px;
+    line-height: 40px;
+  }
+  .text {
+    text-align: left;
   }
 }

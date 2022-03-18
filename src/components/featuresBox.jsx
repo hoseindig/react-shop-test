@@ -1,5 +1,5 @@
 import { Row, Col, Container } from "react-bootstrap";
- 
+
 import styles from "./featuresBox.module.scss";
 const FeaturesBox = () => {
   const features = [
@@ -29,18 +29,12 @@ const FeaturesBox = () => {
     },
   ];
   return (
-    <Container>
-      <div className={styles.features}>
-        <Row>
-          {features.map((f) => {
-            return (
-              <Col
-                key={f.id}
-                md={3}
-                sm={6}
-                xs={1}
-                className={styles["feature-box"] + " h-100"}
-              >
+    <Container className="mt-3">
+      <Row>
+        {features.map((f) => {
+          return (
+            <Col key={f.id} md={3} sm={6} xs={1}>
+              <div className={styles["feature-box"] + " h-100"}>
                 <div className={styles["icon"]}>
                   <i className={f.icon}></i>
                   {/* <FontAwesomeIcon icon={faHome} /> */}
@@ -49,11 +43,11 @@ const FeaturesBox = () => {
                   <h5>{f.h5}</h5>
                   <p> {f.p}</p>
                 </div>
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
+              </div>
+            </Col>
+          );
+        })}
+      </Row>
     </Container>
   );
 };
