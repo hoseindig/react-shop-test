@@ -35,14 +35,20 @@ const FeaturesBox = () => {
           return (
             <Col key={f.id} md={3} sm={6} xs={1}>
               <div className={styles["feature-box"] + " h-100"}>
-                <div className={styles["icon"]}>
-                  <i className={f.icon}></i>
-                  {/* <FontAwesomeIcon icon={faHome} /> */}
-                </div>
-                <div className={styles["text"]}>
-                  <h5>{f.h5}</h5>
-                  <p> {f.p}</p>
-                </div>
+                <Row>
+                  <Col md={3} sm={5} xs={12}>
+                    <div className={styles["icon"]}>
+                      <i className={f.icon}></i>
+                      {/* <FontAwesomeIcon icon={faHome} /> */}
+                    </div>
+                  </Col>
+                  <Col md={9} sm={7} xs={12}>
+                    <div className={styles["text"]}>
+                      <h5>{f.h5}</h5>
+                      <p> {f.p}</p>
+                    </div>
+                  </Col>
+                </Row>
               </div>
             </Col>
           );
