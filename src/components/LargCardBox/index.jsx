@@ -8,7 +8,7 @@ const LargCardBox = ({ item, bigCard }) => {
       className={styles["product-card"]}
     >
       <Row>
-        <Col md={3}>
+        <Col md={4} sm={5} xs={12}>
           <Card.Img
             variant="top"
             className={styles["image"]}
@@ -19,7 +19,7 @@ const LargCardBox = ({ item, bigCard }) => {
             }
           />
         </Col>
-        <Col md={9} className={styles["body"]}>
+        <Col md={7} sm={7} xs={12} className={styles["body"]}>
           <Card.Body>
             <Card.Text className={styles["text"]}>
               <p>{item.text}</p>
