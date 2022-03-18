@@ -22,7 +22,7 @@ const ProductsInTab = ({cards}) => {
     >
       <Tab eventKey="home" title="Featured Products">
         <span>Featured Products</span>
-        <ProductsInTowColTab filterBy='featuredProducts' cards={cards.filter(i=> i.featuredProducts)} towRowArray={towRowArray} />
+      <ProductsInTowColTab filterBy='featuredProducts' cards={cards.filter(i=> i.featuredProducts)} towRowArray={towRowArray} />
       </Tab>
       <Tab eventKey="profile" title="New Arrivals">
         <span>New Arrivals</span>
