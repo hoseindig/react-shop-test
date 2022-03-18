@@ -264,9 +264,59 @@ const MainBox = () => {
       isSpecialOffer: false,
     },
   ];
+  const carousels = [
+    {
+      img: "2.jpg",
+      alt: "First slide",
+      interval: 10000,
+      Caption: (
+        <div>
+          <h3>2 slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      ),
+    },
+    {
+      img: "7.jpg",
+      alt: "First slide",
+      interval: 10000,
+      Caption: (
+        <div>
+          <h3>7 slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      ),
+    },
+  ];
+  const features = [
+    {
+      id: 1,
+      icon: "fas fa-truck-fast",
+      h5: "Free Shipping Item",
+      p: "Orders over $500",
+    },
+    {
+      id: 2,
+      icon: "fas fa-solid fa-rotate-right",
+      h5: "Money Back Guarantee",
+      p: "100% money back",
+    },
+    {
+      id: 3,
+      icon: "fas fa-piggy-bank",
+      h5: "Cash On Delivery",
+      p: "Lorem ipsum dolor amet",
+    },
+    {
+      id: 4,
+      icon: "fas fa-life-ring",
+      h5: "Help & Support",
+      p: "Call us : + 0123.4567.89",
+    },
+  ];
   return (
     <Row className={styles["main-box"]}>
-      <CarouselBox />
+      <CarouselBox carousels={carousels}/>
       <Container>
         <CategoryGallery />
         <Section
@@ -280,7 +330,7 @@ const MainBox = () => {
           centerMode={true}
         />
 
-        <FeaturesBox />
+        <FeaturesBox features={features}/>
         <PromoImage />
         <ProductsInTabAndSpecialOffer cards={cards} />
 
