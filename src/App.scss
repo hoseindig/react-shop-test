@@ -237,7 +237,7 @@
   position: inherit;
   // display: none;
 }
-
+/***********************/
 .nav-tabs .nav-link.active {
   background-color: #ffffff;
   border: 3px solid #62ab00;
@@ -264,4 +264,20 @@
   border-color: #62ab00 transparent transparent transparent;
   top: 47px;
   left: 60px;
+}
+/***********************/
+.custom-dot-list-style {
+  // color: red;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.4;
+  transition: 0.2s;
+  cursor: pointer;
+  .react-multi-carousel-dot--active {
+  }
+  .react-multi-carousel-dot--active button {
+    background: #62ab00;
+  }
+  &:hover {
+    opacity: .9;
+  }
 }
