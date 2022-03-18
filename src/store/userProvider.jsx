@@ -10,6 +10,7 @@ const defaultState = {
   user: { userId: null, username: null, fullName: null },
   siteSeting: {
     lang: "en",
+    barVisibility: false,
     priceUnitSelect: { id: 4, name: "$ US Dollar", symbol: "$" },
     languageSelect: { id: 1, name: "English" },
     header: {
@@ -72,26 +73,26 @@ const defaultState = {
           ],
         },
       ],
-      cart:{
+      cart: {
         languagesOption: [
           { id: 1, text: "Shopping Cart" },
           { id: 3, text: "سبد خرید" },
         ],
-        dropDown:{
-          checkOutBtn:{
+        dropDown: {
+          checkOutBtn: {
             languagesOption: [
               { id: 1, text: "Check Out" },
               { id: 3, text: "وارسی" },
             ],
           },
-          viewCartBtn:{
+          viewCartBtn: {
             languagesOption: [
               { id: 1, text: "View Cart" },
               { id: 3, text: "مشاهده سبد خرید" },
             ],
-          }
-        }
-      }
+          },
+        },
+      },
     },
   },
 };
@@ -130,6 +131,14 @@ const UserReducer = (state, action) => {
     };
     return { ...state, siteSeting };
   }
+  if (action.type === "SETBarVisibility") {
+    // debugger;
+    const siteSeting = {
+      ...state.siteSeting,
+      barVisibility: action.item,
+    };
+    return { ...state, siteSeting };
+  }
   return defaultState;
 };
 //#endregion
@@ -159,6 +168,7 @@ const UserProvider = (props) => {
       item,
     });
   };
+
   const setLanguage = (item) => {
     console.log("SETLanguage", item);
     dispachState({
@@ -167,6 +177,13 @@ const UserProvider = (props) => {
     });
   };
 
+  const setbarVisibility = (bol) => {
+    console.log("SETLanguage", bol);
+    dispachState({
+      type: "SETBarVisibility",
+      item: bol,
+    });
+  };
   //function
   ////////////////////////////
   //#endregion
@@ -175,6 +192,10 @@ const UserProvider = (props) => {
     ...myState,
     userLogin: login,
     userLogout: logOut,
+    siteSeting: {
+      ...myState.siteSeting,
+      setbarVisibilityCntx: setbarVisibility,
+    },
 
     cartItems: [
       {

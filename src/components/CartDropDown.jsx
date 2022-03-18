@@ -6,16 +6,20 @@ const CardDropDown = ({ show }) => {
   const UserCntx = useContext(UserContext);
   const cart = UserCntx.siteSeting.header.cart;
   const languageSelect = UserCntx.siteSeting.languageSelect;
+  const { barVisibility } = UserCntx.siteSeting;
   // console.log("CardItem", cart, languageSelect);
   const getLanguageText = (list) => {
-    const select=list.find((i) => i.id === languageSelect.id);
-    return select
+    const select = list.find((i) => i.id === languageSelect.id);
+    return select;
   };
   // debugger;
   return (
     <div
       className="cart-dropdown-block"
-      style={{ opacity: show ? 1 : showCard ? 1 : 0 }}
+      style={{
+        opacity: show ? 1 : showCard ? 1 : 1,
+        top: barVisibility ? 107 : 190,
+      }}
       onMouseOver={() => setShowCard(true)}
       onMouseLeave={() => setShowCard(false)}
     >

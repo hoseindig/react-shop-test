@@ -14,6 +14,8 @@ const UserContext = React.createContext({
   languageSelect: {},
   header: {},
   siteSeting:{
+    barVisibility:false,
+    setbarVisibilityCntx:() => {},
     priceUnitSelect:{},
     languageSelect:{},
     header:{

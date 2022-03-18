@@ -2,17 +2,18 @@ import React, { useContext, useState, useEffect } from "react";
 import { Navbar, Container, Popover, Badge } from "react-bootstrap";
 
 import UserContext from "../store/userContext";
-import CartDropDown from "./CardDropDown";
+import CartDropDown from "./CartDropDown";
 import styles from "./navbar.module.scss";
 
 const NavbarForm = () => {
   const userCntx = useContext(UserContext);
   const cart = userCntx.siteSeting.header.cart;
+  const{setbarVisibilityCntx} = userCntx.siteSeting
   // debugger
   const [showCardDropDown, setShowCardDropDown] = useState(false);
 
   /************************** */
-  // nav sticky  scroll        //
+  // nav sticky  scroll       //
   const [barVisibility, setBarVisibility] = useState(false);
   const [scrollPosition, setSrollPosition] = useState(0);
   const handleScroll = () => {
@@ -29,12 +30,12 @@ const NavbarForm = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(()=>{
+    setbarVisibilityCntx(barVisibility)
+  },[barVisibility])
   /***************** */
-
   const seletedLanguage = userCntx.siteSeting.languageSelect.id;
-
-  // console.log("seletedLanguage", seletedLanguage,userCntx.siteSeting.languageSelect.id);
-  // console.log("cart",cart);
 
   const getLanguageText = (list) => {
     const select = list.find((i) => i.id === seletedLanguage);

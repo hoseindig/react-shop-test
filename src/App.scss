@@ -72,6 +72,9 @@
   // pointer-events: none;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  position: absolute;
+  right: 0;
+  top: 191px;
 }
 
 .cart-dropdown-block .single-cart-block {
@@ -260,5 +263,5 @@
   border-style: solid;
   border-color: #62ab00 transparent transparent transparent;
   top: 47px;
-    left: 60px;
+  left: 60px;
 }
