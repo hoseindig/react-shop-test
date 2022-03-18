@@ -265,36 +265,35 @@ const MainBox = () => {
     },
   ];
   return (
-    <div className={styles["main-box"]}>
-      {/* <h1>Main Box</h1> */}
-      <CarouselBox />
-      <CategoryGallery />
-      <Section
-        title="arts & photography books"
-        cards={cards.filter((i) => i.category === 1)}
-        centerMode={true}
-      />
-      <Section
-        title="BIOGRAPHIES BOOKS"
-        cards={cards.filter((i) => i.category === 3)}
-        centerMode={true}
-      />
+    <Row className={styles["main-box"]}>
 
-      <FeaturesBox />
-      <PromoImage />
-      <Container>
-        <Row>
-          <Col md={3}>
-            <SpecialOffer cards={cards.filter((i) => i.isSpecialOffer)} />
-          </Col>
-          <Col md={9}>
-            <ProductsInTab cards={cards} />
-          </Col>
-        </Row>
-      </Container>
-      <Section title="CLIENT TESTIMONIALS" cards={client} bigCard={true} />
-      <Footer />
-    </div>
+        <CarouselBox />
+        <CategoryGallery />
+        <Section
+          title="arts & photography books"
+          cards={cards.filter((i) => i.category === 1)}
+          centerMode={true}
+        />
+        <Section
+          title="BIOGRAPHIES BOOKS"
+          cards={cards.filter((i) => i.category === 3)}
+          centerMode={true}
+        />
+
+        <FeaturesBox />
+        <PromoImage />
+        <Container >
+          <Row>
+            <Col md={3}>
+              <SpecialOffer cards={cards.filter((i) => i.isSpecialOffer)} />
+            </Col>
+            <Col md={9}>
+              <ProductsInTab cards={cards} />
+            </Col>
+          </Row>
+        </Container>
+        <Section title="CLIENT TESTIMONIALS" cards={client} bigCard={true} />
+    </Row>
   );
 };
 
