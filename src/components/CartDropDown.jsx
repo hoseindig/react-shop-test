@@ -4,7 +4,6 @@ import UserContext from "../store/userContext";
 import CardItemInCart from "./CardItem";
 
 const CardDropDown = ({ show }) => {
-  console.log("CardDropDown");
 
   const [showCard, setShowCard] = useState(false);
 

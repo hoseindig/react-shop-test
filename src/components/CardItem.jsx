@@ -2,7 +2,6 @@ import { useContext } from "react";
 import UserContext from "../store/userContext";
 const CardItem = ({ items }) => {
   const UserCtx = useContext(UserContext);
-  console.log("CardItem", items);
   return (
     <div>
       {items.map((i) => {
