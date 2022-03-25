@@ -18,8 +18,9 @@ const MainBox = () => {
     {
       id: 1,
       title: "Epple",
-      img: "client-1.png",
+      image: "client-1.png",
       folder: "client",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -28,8 +29,9 @@ const MainBox = () => {
     {
       id: 2,
       title: "Epple",
-      img: "client-2.png",
+      image: "client-2.png",
       folder: "client",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -38,8 +40,9 @@ const MainBox = () => {
     {
       id: 3,
       title: "Epple",
-      img: "client-3.png",
+      image: "client-3.png",
       folder: "client",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -48,8 +51,9 @@ const MainBox = () => {
     {
       id: 4,
       title: "Epple",
-      img: "client-4.png",
+      image: "client-4.png",
       folder: "client",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -58,8 +62,9 @@ const MainBox = () => {
     {
       id: 5,
       title: "Epple",
-      img: "client-5.png",
+      image: "client-5.png",
       folder: "client",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -70,7 +75,8 @@ const MainBox = () => {
     {
       id: 1,
       title: "Epple",
-      img: "product-4.jpg",
+      image: "product-4.jpg",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -84,8 +90,9 @@ const MainBox = () => {
     {
       id: 2,
       title: "Hpple",
-      img: "product-5.jpg",
+      image: "product-5.jpg",
       text: "a Half Very Simple Things You To",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -98,8 +105,9 @@ const MainBox = () => {
     {
       id: 3,
       title: "Bpple",
-      img: "product-8.jpg",
+      image: "product-8.jpg",
       text: "  BOOK: Do You Really Need It? This ",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -112,8 +120,9 @@ const MainBox = () => {
     {
       id: 33,
       title: "zpple",
-      img: "product-13.jpg",
+      image: "product-13.jpg",
       text: "BOOK: Do You Really Need It? This ",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -126,8 +135,9 @@ const MainBox = () => {
     {
       id: 4,
       title: "Lpple",
-      img: "product-2.jpg",
+      image: "product-2.jpg",
       text: "Revolutionize Your BOOK With ",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -140,8 +150,9 @@ const MainBox = () => {
     {
       id: 5,
       title: "Jpple",
-      img: "product-10.jpg",
+      image: "product-10.jpg",
       text: "Revolutionize Your BOOK With ",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -154,8 +165,9 @@ const MainBox = () => {
     {
       id: 6,
       title: "Wpple",
-      img: "product-3.jpg",
+      image: "product-3.jpg",
       text: "Revolutionize Your BOOK With ",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -168,8 +180,9 @@ const MainBox = () => {
     {
       id: 7,
       title: "Hpple 2",
-      img: "product-5.jpg",
+      image: "product-5.jpg",
       text: "a Half Very Simple Things You To",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -182,8 +195,9 @@ const MainBox = () => {
     {
       id: 8,
       title: "Bpple 2",
-      img: "product-8.jpg",
+      image: "product-8.jpg",
       text: "  BOOK: Do You Really Need It? This ",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -196,8 +210,9 @@ const MainBox = () => {
     {
       id: 10,
       title: "Wpple 2",
-      img: "product-3.jpg",
+      image: "product-3.jpg",
       text: "Revolutionize Your BOOK With ",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -210,8 +225,9 @@ const MainBox = () => {
     {
       id: 11,
       title: "Hpple 3",
-      img: "product-5.jpg",
+      image: "product-5.jpg",
       text: "a Half Very Simple Things You To",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -224,8 +240,9 @@ const MainBox = () => {
     {
       id: 12,
       title: "Bpple 3",
-      img: "product-8.jpg",
+      image: "product-8.jpg",
       text: "  BOOK: Do You Really Need It? This ",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -238,8 +255,9 @@ const MainBox = () => {
     {
       id: 13,
       title: "Hpple 4",
-      img: "product-5.jpg",
+      image: "product-5.jpg",
       text: "a Half Very Simple Things You To",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -252,8 +270,9 @@ const MainBox = () => {
     {
       id: 14,
       title: "Bpple 4",
-      img: "product-8.jpg",
+      image: "product-8.jpg",
       text: "  BOOK: Do You Really Need It? This ",
+      count: 1,
       price: 51.2,
       priceOld: 51.2,
       priceDiscount: "20%",
@@ -266,7 +285,7 @@ const MainBox = () => {
   ];
   const carousels = [
     {
-      img: "2.jpg",
+      image: "2.jpg",
       alt: "First slide",
       interval: 10000,
       Caption: (
@@ -277,7 +296,7 @@ const MainBox = () => {
       ),
     },
     {
-      img: "7.jpg",
+      image: "7.jpg",
       alt: "First slide",
       interval: 10000,
       Caption: (
@@ -316,7 +335,7 @@ const MainBox = () => {
   ];
   return (
     <Row className={styles["main-box"]}>
-      <CarouselBox carousels={carousels}/>
+      <CarouselBox carousels={carousels} />
       <Container>
         <CategoryGallery />
         <Section
@@ -330,7 +349,7 @@ const MainBox = () => {
           centerMode={true}
         />
 
-        <FeaturesBox features={features}/>
+        <FeaturesBox features={features} />
         <PromoImage />
         <ProductsInTabAndSpecialOffer cards={cards} />
 

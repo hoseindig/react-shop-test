@@ -1,7 +1,12 @@
 import { Card, Button, Container, CardGroup } from "react-bootstrap";
 import styles from "../CardGroupBox.module.scss";
+import React, { useContext } from "react";
 
+import UserContext from "../../store/userContext";
 const CardBox = ({ item, bigCard }) => {
+  const userCntx = useContext(UserContext);
+  const moneySymbol = userCntx.siteSeting.priceUnitSelect.symbol;
+
   return (
     <Card
       style={{ width: bigCard ? "100%" : "18rem" }}
@@ -18,15 +23,28 @@ const CardBox = ({ item, bigCard }) => {
         variant="top"
         src={
           item.folder
-            ? "images/" + item.folder + "/" + item.img
-            : "images/products/" + item.img
+            ? "images/" + item.folder + "/" + item.image
+            : "images/products/" + item.image
         }
       />
+
+      <i
+        title={moneySymbol + item.price}
+        class="fa fa-shopping-cart"
+        aria-hidden="true"
+        onClick={() => userCntx.addToCartItems(item)}
+      ></i>
       <Card.Body>
         <Card.Text className={styles["price-block"]}>
-          <span className={styles["price"]}>£51.20</span>
-          <del className={styles["price-old"]}>£51.20</del>
-          <span className={styles["price-discount"]}>20%</span>
+          <span className={styles["price"]}>
+            {moneySymbol}
+            {item.price}
+          </span>
+          <del className={styles["price-old"]}>
+            {moneySymbol}
+            {item.priceOld}
+          </del>
+          <span className={styles["price-discount"]}>{item.priceDiscount}</span>
         </Card.Text>
       </Card.Body>
     </Card>

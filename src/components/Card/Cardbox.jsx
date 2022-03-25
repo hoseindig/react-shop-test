@@ -11,10 +11,6 @@ const CardBox = ({ item, moneySymbol }) => {
           <Card.Body>
             <Card.Title className={styles["author"]}>
               {item.title}
-              {/* <p>mostViewedProducts {item.mostViewedProducts.toString()}</p> */}
-              {/* <p>newArrivals {item.newArrivals.toString()}</p> */}
-              {/* <p>featuredProducts {item.featuredProducts.toString()}</p> */}
-              {/* <p> {item.category}</p> */}
             </Card.Title>
             <Card.Text className={styles["card-text"]}>
               <h4>{item.text}</h4>
