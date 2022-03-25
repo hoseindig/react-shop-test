@@ -1,6 +1,10 @@
 import { Card, Button, Container, CardGroup, Col, Row } from "react-bootstrap";
 import styles from "../ProductsInTowColTab.module.scss";
+
+import React, { useContext } from "react";
+import UserContext from "../../store/userContext";
 const CardBox = ({ item, moneySymbol }) => {
+  const userCntx = useContext(UserContext);
   return (
     <Card key={item.id} className={styles["product-card"]}>
       <Row>
@@ -9,12 +13,16 @@ const CardBox = ({ item, moneySymbol }) => {
         </Col>
         <Col md={6}>
           <Card.Body>
-            <Card.Title className={styles["author"]}>
-              {item.title}
-            </Card.Title>
+            <Card.Title className={styles["author"]}>{item.title}</Card.Title>
             <Card.Text className={styles["card-text"]}>
               <h4>{item.text}</h4>
             </Card.Text>
+            <i
+              title={moneySymbol + item.price}
+              class="fa fa-shopping-cart"
+              aria-hidden="true"
+              onClick={() => userCntx.addToCartItems(item)}
+            ></i>
             <Card.Text className={styles["price-block"]}>
               <span className={styles["price"]}>
                 {moneySymbol}

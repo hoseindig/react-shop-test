@@ -1,4 +1,6 @@
 .product-card {
+  transform: scale(0.95);
+  transition: 0.2s;
   border: 0;
   border-left: 1px solid #e7e7e7;
   img {
@@ -77,5 +79,22 @@
     }
     // font-size: 1.1rem;
     text-align: left;
+  }
+
+  i {
+    transform: scale(0.9);
+    transition: 0.2s;
+    font-size: 2rem;
+    color: #62ab00;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1);
   }
 }
