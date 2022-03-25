@@ -1,6 +1,6 @@
-import UserContext from "./userContext";
-
 import React, { useReducer } from "react";
+import UserContext from "./userContext";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 const defaultState = {
   items: [],
@@ -106,6 +106,7 @@ const UserReducer = (state, action) => {
       username: "hoseinx",
       fullName: "hossein sheykhi",
     };
+    toast.success(updateState.username + " successfull Login");
     return { ...state, user: updateState };
   }
   if (action.type === "LOGOUT") {
@@ -114,6 +115,8 @@ const UserReducer = (state, action) => {
       username: null,
       fullName: null,
     };
+    toast.success(" User Logout");
+
     return { ...state, user: updateState };
   }
 
@@ -153,10 +156,13 @@ const UserReducer = (state, action) => {
         total +=
           copyOfState.cartItems[i].count * copyOfState.cartItems[i].price;
       }
+      toast.success(`Item added "${action.item.title}"` );
 
       return { ...state, copyOfState, totalCartMoney: total };
     }
     const cartItems = [...state.cartItems, action.item];
+    toast.success(`Item added "${action.item.title}"` );
+
     return { ...state, cartItems };
   }
 
@@ -171,6 +177,7 @@ const UserReducer = (state, action) => {
         total +=
           copyOfState.cartItems[i].count * copyOfState.cartItems[i].price;
       }
+      toast.error(`Item removed "${action.item.title}"` );
 
       return { ...state, copyOfState, totalCartMoney: total };
     }
