@@ -21,9 +21,7 @@ const LargCardBox = ({ item, bigCard }) => {
         </Col>
         <Col md={7} sm={7} xs={12} className={styles["body"]}>
           <Card.Body>
-            <Card.Text className={styles["text"]}>
-              <p>{item.text}</p>
-            </Card.Text>
+            <Card.Text className={styles["text"]}>{item.text}</Card.Text>
             <Card.Title className={styles["author"]}>
               <span> {item.title}</span>
             </Card.Title>

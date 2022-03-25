@@ -4,9 +4,9 @@ const CarouselBox = ({ carousels }) => {
   console.log("CarouselBox", carousels);
   return (
     <Carousel className={styles.box}>
-      {carousels.map((item) => {
+      {carousels.map((item,index) => {
         return (
-          <Carousel.Item key={item.img} interval={item.interval}>
+          <Carousel.Item key={item.image+index} interval={item.interval}>
             <img
               className={"d-block w-100 " + styles.Image}
               src={"images/slide/" + item.image}

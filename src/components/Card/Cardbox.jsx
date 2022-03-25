@@ -14,12 +14,10 @@ const CardBox = ({ item, moneySymbol }) => {
         <Col md={6}>
           <Card.Body>
             <Card.Title className={styles["author"]}>{item.title}</Card.Title>
-            <Card.Text className={styles["card-text"]}>
-              <h4>{item.text}</h4>
-            </Card.Text>
+            <Card.Text className={styles["card-text"]}>{item.text}</Card.Text>
             <i
               title={moneySymbol + item.price}
-              class="fa fa-shopping-cart"
+              className="fa fa-shopping-cart"
               aria-hidden="true"
               onClick={() => userCntx.addToCartItems(item)}
             ></i>

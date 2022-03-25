@@ -15,9 +15,7 @@ const CardBox = ({ item, bigCard }) => {
     >
       <Card.Body>
         <Card.Title className={styles["author"]}>{item.title}</Card.Title>
-        <Card.Text>
-          <h3>{item.text}</h3>
-        </Card.Text>
+        <Card.Text>{item.text}</Card.Text>
       </Card.Body>
       <Card.Img
         variant="top"
@@ -30,7 +28,7 @@ const CardBox = ({ item, bigCard }) => {
 
       <i
         title={moneySymbol + item.price}
-        class="fa fa-shopping-cart"
+        className="fa fa-shopping-cart"
         aria-hidden="true"
         onClick={() => userCntx.addToCartItems(item)}
       ></i>
