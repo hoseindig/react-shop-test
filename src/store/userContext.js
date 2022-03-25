@@ -9,6 +9,9 @@ const UserContext = React.createContext({
   userLogout: () => {},
   setPriceUnit: () => {},
   setLanguage: () => {},
+  addToCartItems: () => {},
+  removeFromCartItems: () => {},
+
   cartItems: [],
   priceUnitSelect: {},
   languageSelect: {},

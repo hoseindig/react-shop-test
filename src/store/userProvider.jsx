@@ -95,6 +95,7 @@ const defaultState = {
       },
     },
   },
+  cartItems: [],
 };
 //#region
 const UserReducer = (state, action) => {
@@ -139,6 +140,26 @@ const UserReducer = (state, action) => {
     };
     return { ...state, siteSeting };
   }
+
+  if (action.type === "AddToCartItems") {
+    const index = state.cartItems.findIndex((i) => i.id === action.item.id);
+    if (index !== -1) {
+      let copyOfState = state;
+      copyOfState.cartItems[index].count++;
+      return { ...state, copyOfState };
+    }
+    const cartItems = [...state.cartItems, action.item];
+    return { ...state, cartItems };
+  }
+  if (action.type === "RemoveFromCartItems") {
+    const index = state.cartItems.findIndex((i) => i.id === action.item.id);
+    if (index !== -1) {
+      let copyOfState = state;
+      copyOfState.cartItems.splice(index, 1); //  [index].count++;
+      return { ...state, copyOfState };
+    }
+  }
+
   return defaultState;
 };
 //#endregion
@@ -187,6 +208,22 @@ const UserProvider = (props) => {
       item: bol,
     });
   };
+
+  const addToCartItems = (item) => {
+    console.log("addToCartItems", item);
+    dispachState({
+      type: "AddToCartItems",
+      item: item,
+    });
+  };
+
+  const removeFromCartItems = (item) => {
+    console.log("removeFromCartItems", item);
+    dispachState({
+      type: "RemoveFromCartItems",
+      item: item,
+    });
+  };
   //function
   ////////////////////////////
   //#endregion
@@ -200,24 +237,26 @@ const UserProvider = (props) => {
       setbarVisibilityCntx: setbarVisibility,
     },
 
-    cartItems: [
-      {
-        id: 1,
-        title: "Kodak PIXPRO Astro Zoom AZ421 16 MP",
-        image: "cart-product-1.jpg",
-        price: 87.34,
-        count: 1,
-      },
-      {
-        id: 2,
-        title: "Kodak PIXPRO Astro Zoom AZ421 16 MP",
-        image: "cart-product-1.jpg",
-        price: 87.34,
-        count: 1,
-      },
-    ],
+    // cartItems: [
+    //   {
+    //     id: 1,
+    //     title: "Kodak PIXPRO Astro Zoom AZ421 16 MP",
+    //     image: "cart-product-1.jpg",
+    //     price: 87.34,
+    //     count: 1,
+    //   },
+    //   {
+    //     id: 2,
+    //     title: "Kodak PIXPRO Astro Zoom AZ421 16 MP",
+    //     image: "cart-product-1.jpg",
+    //     price: 87.34,
+    //     count: 1,
+    //   },
+    // ],
     setPriceUnit,
     setLanguage,
+    addToCartItems,
+    removeFromCartItems,
   };
   return (
     <UserContext.Provider value={myContext}>

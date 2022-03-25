@@ -1,7 +1,7 @@
 import React, { useState, useContext, useLayoutEffect } from "react";
 
 import UserContext from "../store/userContext";
-import CardItem from "./CardItem";
+import CardItemInCart from "./CardItem";
 
 const CardDropDown = ({ show }) => {
   const [showCard, setShowCard] = useState(false);
@@ -57,7 +57,7 @@ const CardDropDown = ({ show }) => {
     <div
       className="cart-dropdown-block"
       style={{
-        opacity: show ? 1 : showCard ? 1 : 0,
+        opacity: show ? 1 : showCard ? 1 : 1,
         top: barVisibility ? 107 : 190,
         left: offset.left,
       }}
@@ -67,23 +67,27 @@ const CardDropDown = ({ show }) => {
       {/* {showCard ? <h1>showCard</h1> : ""}
       {show ? <h1>show</h1> : ""} */}
       <div className=" single-cart-block ">
-        <CardItem items={UserCntx.cartItems} />
+        <CardItemInCart items={UserCntx.cartItems} />
       </div>
       <div className=" single-cart-block ">
-        <div className="btn-block">
-          <a href="cart.html" className="btn">
-            {/* View Cart */}
-            {getLanguageText(cart.dropDown.viewCartBtn.languagesOption).text}
-            {/* {cart.dropDown.viewCartBtn.languagesOption[languageSelect.id]} */}
-            <i className="fa fa-chevron-right"></i>
-          </a>
-          <a href="checkout.html" className="btn btn--primary">
-            {/* Check Out  */}
-            {getLanguageText(cart.dropDown.checkOutBtn.languagesOption).text}
+        {UserCntx.cartItems.length > 0 && (
+          <div className="btn-block">
+            <a href="cart.html" className="btn">
+              {/* View Cart */}
+              {getLanguageText(cart.dropDown.viewCartBtn.languagesOption).text}
+              {/* {cart.dropDown.viewCartBtn.languagesOption[languageSelect.id]} */}
+              <i className="fa fa-chevron-right"></i>
+            </a>
+            <a href="checkout.html" className="btn btn--primary">
+              {/* Check Out  */}
+              {getLanguageText(cart.dropDown.checkOutBtn.languagesOption).text}
 
-            <i className="fa fa-chevron-right"></i>
-          </a>
-        </div>
+              <i className="fa fa-chevron-right"></i>
+            </a>
+          </div>
+        )}
+
+        {UserCntx.cartItems.length === 0 && <h4> Cart Empty</h4>}
       </div>
     </div>
   );

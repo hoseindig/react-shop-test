@@ -2,6 +2,7 @@ import { useContext } from "react";
 import UserContext from "../store/userContext";
 const CardItem = ({ items }) => {
   const UserCtx = useContext(UserContext);
+  console.log("CardItem", items);
   return (
     <div>
       {items.map((i) => {
@@ -19,7 +20,10 @@ const CardItem = ({ items }) => {
                 {UserCtx.siteSeting.priceUnitSelect.symbol}
                 {i.price}
               </p>
-              <button className="cross-btn">
+              <button
+                className="cross-btn"
+                onClick={() => UserCtx.removeFromCartItems(i)}
+              >
                 <i className="fa fa-times"></i>
               </button>
             </div>
