@@ -13,6 +13,7 @@ const UserContext = React.createContext({
   removeFromCartItems: () => {},
 
   cartItems: [],
+  totalCartMoney: 0,
   priceUnitSelect: {},
   languageSelect: {},
   header: {},

@@ -96,6 +96,7 @@ const defaultState = {
     },
   },
   cartItems: [],
+  totalCartMoney: 0,
 };
 //#region
 const UserReducer = (state, action) => {
@@ -146,17 +147,32 @@ const UserReducer = (state, action) => {
     if (index !== -1) {
       let copyOfState = state;
       copyOfState.cartItems[index].count++;
-      return { ...state, copyOfState };
+
+      let total = 0;
+      for (let i = 0; i < copyOfState.cartItems.length; i++) {
+        total +=
+          copyOfState.cartItems[i].count * copyOfState.cartItems[i].price;
+      }
+
+      return { ...state, copyOfState, totalCartMoney: total };
     }
     const cartItems = [...state.cartItems, action.item];
     return { ...state, cartItems };
   }
+
   if (action.type === "RemoveFromCartItems") {
     const index = state.cartItems.findIndex((i) => i.id === action.item.id);
     if (index !== -1) {
       let copyOfState = state;
       copyOfState.cartItems.splice(index, 1); //  [index].count++;
-      return { ...state, copyOfState };
+
+      let total = 0;
+      for (let i = 0; i < copyOfState.cartItems.length; i++) {
+        total +=
+          copyOfState.cartItems[i].count * copyOfState.cartItems[i].price;
+      }
+
+      return { ...state, copyOfState, totalCartMoney: total };
     }
   }
 
