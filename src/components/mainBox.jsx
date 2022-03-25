@@ -14,7 +14,7 @@ const MainBox = () => {
     { id: 2, name: "photography" },
     { id: 3, name: "biographies " },
   ];
-  const client = [
+  const clients = [
     {
       id: 1,
       title: "Epple",
@@ -353,7 +353,7 @@ const MainBox = () => {
         <PromoImage />
         <ProductsInTabAndSpecialOffer cards={cards} />
 
-        <Section title="CLIENT TESTIMONIALS" cards={client} bigCard={true} />
+        <Section title="CLIENT TESTIMONIALS" cards={clients} bigCard={true} />
       </Container>
     </Row>
   );
