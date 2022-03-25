@@ -5,7 +5,7 @@ const CardBox = ({ item, moneySymbol }) => {
     <Card key={item.id} className={styles["product-card"]}>
       <Row>
         <Col md={6}>
-          <img alt="" src={"images/products/" + item.img} />
+          <img alt="" src={"images/products/" + item.image} />
         </Col>
         <Col md={6}>
           <Card.Body>

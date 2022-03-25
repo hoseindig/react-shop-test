@@ -14,8 +14,8 @@ const LargCardBox = ({ item, bigCard }) => {
             className={styles["image"]}
             src={
               item.folder
-                ? "images/" + item.folder + "/" + item.img
-                : "images/products/" + item.img
+                ? "images/" + item.folder + "/" + item.image
+                : "images/products/" + item.image
             }
           />
         </Col>
