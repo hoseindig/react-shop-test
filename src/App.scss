@@ -86,6 +86,9 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  img{
+    width: 100px;
+  }
 }
 
 .cart-dropdown-block .cart-product:last-child {
