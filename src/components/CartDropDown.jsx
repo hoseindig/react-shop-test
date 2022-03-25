@@ -4,6 +4,8 @@ import UserContext from "../store/userContext";
 import CardItemInCart from "./CardItem";
 
 const CardDropDown = ({ show }) => {
+  console.log("CardDropDown");
+
   const [showCard, setShowCard] = useState(false);
 
   const UserCntx = useContext(UserContext);
@@ -57,7 +59,7 @@ const CardDropDown = ({ show }) => {
     <div
       className="cart-dropdown-block"
       style={{
-        opacity: show ? 1 : showCard ? 1 : 0,// 1- show  2-hide
+        opacity: show ? 1 : showCard ? 1 : 0, // 1- show  2-hide
         top: barVisibility ? 107 : 190,
         left: offset.left,
       }}

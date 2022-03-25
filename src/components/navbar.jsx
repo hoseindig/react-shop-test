@@ -12,6 +12,7 @@ const NavbarForm = () => {
   // debugger
   const [showCardDropDown, setShowCardDropDown] = useState(false);
 
+
   /************************** */
   // nav sticky  scroll       //
   const [barVisibility, setBarVisibility] = useState(false);
@@ -47,7 +48,7 @@ const NavbarForm = () => {
       <Container>
         <Navbar.Brand>
           <Link to="/">
-          <img src="images/logo.jpg" alt="" />
+            <img src="images/logo.jpg" alt="" />
           </Link>
         </Navbar.Brand>
         {/* search */}
@@ -89,7 +90,11 @@ const NavbarForm = () => {
             <Badge pill bg="danger">
               {userCntx.cartItems.length}
             </Badge>
-            <p> {userCntx.siteSeting.priceUnitSelect.symbol} 11555</p>
+            <p>
+              {/* {cartItems.length} */}
+              {" "}
+              {userCntx.siteSeting.priceUnitSelect.symbol} {userCntx.totalCartMoney}
+            </p>
           </Navbar.Text>
           {/* Cart DropDown */}
           <CartDropDown show={showCardDropDown} />
