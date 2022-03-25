@@ -57,7 +57,7 @@ const CardDropDown = ({ show }) => {
     <div
       className="cart-dropdown-block"
       style={{
-        opacity: show ? 1 : showCard ? 1 : 1,
+        opacity: show ? 1 : showCard ? 1 : 0,// 1- show  2-hide
         top: barVisibility ? 107 : 190,
         left: offset.left,
       }}
