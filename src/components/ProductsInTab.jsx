@@ -11,7 +11,7 @@ const ProductsInTab = ({cards}) => {
     towRowArray[rowArray].push(cards[i]);
     if (i === 5) rowArray++;
   }
-  console.log("towRowArray", towRowArray);
+  // console.log("towRowArray", towRowArray);
   return (
     <Tabs
       id="controlled-tab-example"
