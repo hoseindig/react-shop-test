@@ -96,6 +96,13 @@ const defaultState = {
     },
   },
   cartItems: [],
+  productList: [],
+
+  categoryList: [],
+  clientList: [],
+  carouselList: [],
+  featureList: [],
+
   totalCartMoney: 0,
 };
 //#region
@@ -119,7 +126,6 @@ const UserReducer = (state, action) => {
 
     return { ...state, user: updateState };
   }
-
   if (action.type === "SETPriceUnit") {
     // debugger;
     const siteSeting = {
@@ -144,7 +150,6 @@ const UserReducer = (state, action) => {
     };
     return { ...state, siteSeting };
   }
-
   if (action.type === "AddToCartItems") {
     const index = state.cartItems.findIndex((i) => i.id === action.item.id);
     if (index !== -1) {
@@ -156,16 +161,15 @@ const UserReducer = (state, action) => {
         total +=
           copyOfState.cartItems[i].count * copyOfState.cartItems[i].price;
       }
-      toast.success(`Item added "${action.item.title}"` );
+      toast.success(`Item added "${action.item.title}"`);
 
       return { ...state, copyOfState, totalCartMoney: total };
     }
     const cartItems = [...state.cartItems, action.item];
-    toast.success(`Item added "${action.item.title}"` );
+    toast.success(`Item added "${action.item.title}"`);
 
     return { ...state, cartItems };
   }
-
   if (action.type === "RemoveFromCartItems") {
     const index = state.cartItems.findIndex((i) => i.id === action.item.id);
     if (index !== -1) {
@@ -177,12 +181,28 @@ const UserReducer = (state, action) => {
         total +=
           copyOfState.cartItems[i].count * copyOfState.cartItems[i].price;
       }
-      toast.error(`Item removed "${action.item.title}"` );
+      toast.error(`Item removed "${action.item.title}"`);
 
       return { ...state, copyOfState, totalCartMoney: total };
     }
   }
 
+  if (action.type === "SetProductList") {
+    return { ...state, productList: action.items };
+  }
+  //featuresList carouselsList carouselsList clientsList
+  if (action.type === "SetFeatureList") {
+    return { ...state, featureList: action.items };
+  }
+  if (action.type === "SetCarouselList") {
+    return { ...state, carouselList: action.items };
+  }
+  if (action.type === "SetClientList") {
+    return { ...state, clientList: action.items };
+  }
+  if (action.type === "SetCategoryList") {
+    return { ...state, categoryList: action.items };
+  }
   return defaultState;
 };
 //#endregion
@@ -244,9 +264,48 @@ const UserProvider = (props) => {
     console.log("removeFromCartItems", item);
     dispachState({
       type: "RemoveFromCartItems",
-      item: item,
+      items: item,
     });
   };
+
+  const setProductList = async (items) => {
+    debugger
+    console.log("SetProductList", items);
+    await dispachState({
+      type: "SetProductList",
+      items,
+    });
+  };
+
+  const setFeatureList = async (items) => {
+    console.log("SetFeatureList", items);
+    await dispachState({
+      type: "SetFeatureList",
+      items,
+    });
+  };
+  const setCarouselList = async (items) => {
+    console.log("SetCarouselList", items);
+    await dispachState({
+      type: "SetCarouselList",
+      items,
+    });
+  };
+  const setClientList = async (items) => {
+    console.log("SetClientList", items);
+    await dispachState({
+      type: "SetClientList",
+      items,
+    });
+  };
+  const setCategoryList = async (items) => {
+    console.log("SetCategoryList", items);
+    await dispachState({
+      type: "SetCategoryList",
+      items,
+    });
+  };
+
   //function
   ////////////////////////////
   //#endregion
@@ -259,27 +318,15 @@ const UserProvider = (props) => {
       ...myState.siteSeting,
       setbarVisibilityCntx: setbarVisibility,
     },
-
-    // cartItems: [
-    //   {
-    //     id: 1,
-    //     title: "Kodak PIXPRO Astro Zoom AZ421 16 MP",
-    //     image: "cart-product-1.jpg",
-    //     price: 87.34,
-    //     count: 1,
-    //   },
-    //   {
-    //     id: 2,
-    //     title: "Kodak PIXPRO Astro Zoom AZ421 16 MP",
-    //     image: "cart-product-1.jpg",
-    //     price: 87.34,
-    //     count: 1,
-    //   },
-    // ],
     setPriceUnit,
     setLanguage,
     addToCartItems,
     removeFromCartItems,
+    setProductList,
+    setFeatureList,
+    setCarouselList,
+    setClientList,
+    setCategoryList,
   };
   return (
     <UserContext.Provider value={myContext}>
