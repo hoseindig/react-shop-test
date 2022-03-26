@@ -269,7 +269,6 @@ const UserProvider = (props) => {
   };
 
   const setProductList = async (items) => {
-    debugger
     console.log("SetProductList", items);
     await dispachState({
       type: "SetProductList",
