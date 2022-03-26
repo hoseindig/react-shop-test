@@ -17,6 +17,13 @@ const UserContext = React.createContext({
   setCarouselList: () => {},
   setClientList: () => {},
   setCategoryList: () => {},
+
+  addToCompareList: () => {},
+  addToWishList: () => {},
+  removeFromCompareList: () => {},
+  removeFromWishList: () => {},
+
+
   cartItems: [],
   productList: [],
 
@@ -25,7 +32,9 @@ const UserContext = React.createContext({
   carouselList: [],
   featureList: [],
 
-
+  wishList: [],
+  compareList: [],
+  
   totalCartMoney: 0,
   priceUnitSelect: {},
   languageSelect: {},

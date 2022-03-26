@@ -102,10 +102,10 @@ const ProductDetails = (props) => {
               </div>
             </div>
             <div className="compare-wishlist-row mt-4">
-              <a href="#" className={styles["add-link"]}>
+              <a href="#" className={styles["add-link"]} onClick={()=>userCntx.addToWishList(passItem)}>
                 <i className="fas fa-heart"></i>Add to Wish List
               </a>
-              <a href="#" className={styles["add-link"]}>
+              <a href="#" className={styles["add-link"]} onClick={()=>userCntx.addToCompareList(passItem)}>
                 <i className="fas fa-random"></i>Add to Compare
               </a>
             </div>

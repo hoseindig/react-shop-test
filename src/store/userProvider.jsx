@@ -103,6 +103,9 @@ const defaultState = {
   carouselList: [],
   featureList: [],
 
+  wishList: [],
+  compareList: [],
+
   totalCartMoney: 0,
 };
 //#region
@@ -170,6 +173,35 @@ const UserReducer = (state, action) => {
 
     return { ...state, cartItems };
   }
+
+  if (action.type === "AddToCompareList") {
+    const index = state.compareList.findIndex((i) => i.id === action.item.id);
+    if (index !== -1) {
+      toast.warn(`alredy Item added "${action.item.title}" To Compare List`);
+      return { ...state };
+    } else {
+    }
+    const compareList = [...state.compareList, action.item];
+    toast.success(`Item added "${action.item.title}" To Compare List`);
+    // toast.success(`Item added "${action.item.title}"`);
+
+    return { ...state, compareList };
+  }
+
+  if (action.type === "AddToWishList") {
+    const index = state.wishList.findIndex((i) => i.id === action.item.id);
+    if (index !== -1) {
+      toast.warn(`alredy Item added "${action.item.title}" To Wish List`);
+      return { ...state };
+    } else {
+    }
+    const wishList = [...state.wishList, action.item];
+    toast.success(`Item added "${action.item.title}" To Wish List`);
+    // toast.success(`Item added "${action.item.title}" To Wish List`);
+
+    return { ...state, wishList };
+  }
+
   if (action.type === "RemoveFromCartItems") {
     const index = state.cartItems.findIndex((i) => i.id === action.item.id);
     if (index !== -1) {
@@ -251,6 +283,35 @@ const UserProvider = (props) => {
       item: bol,
     });
   };
+  const addToCompareList = (item) => {
+    console.log("addToCompareList", item);
+    dispachState({
+      type: "AddToCompareList",
+      item: item,
+    });
+  };
+  const addToWishList = (item) => {
+    console.log("AddToWishList", item);
+    dispachState({
+      type: "AddToWishList",
+      item: item,
+    });
+  };
+
+  const removeFromCompareList = (item) => {
+    console.log("removeFromCompareList", item);
+    dispachState({
+      type: "removeFromCompareList",
+      item: item,
+    });
+  };
+  const removeFromWishList = (item) => {
+    console.log("removeFromWishList", item);
+    dispachState({
+      type: "RemoveFromCompareList",
+      item: item,
+    });
+  };
 
   const addToCartItems = (item) => {
     console.log("addToCartItems", item);
@@ -326,6 +387,11 @@ const UserProvider = (props) => {
     setCarouselList,
     setClientList,
     setCategoryList,
+
+    addToCompareList,
+    addToWishList,
+    removeFromCompareList,
+    removeFromWishList,
   };
   return (
     <UserContext.Provider value={myContext}>
