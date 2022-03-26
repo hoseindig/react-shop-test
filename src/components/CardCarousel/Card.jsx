@@ -1,7 +1,7 @@
 import { Card, Button, Container, CardGroup } from "react-bootstrap";
 import styles from "../CardGroupBox.module.scss";
 import React, { useContext } from "react";
-
+import { Link } from "react-router-dom";
 import UserContext from "../../store/userContext";
 const CardBox = ({ item, bigCard }) => {
   const userCntx = useContext(UserContext);
@@ -14,8 +14,17 @@ const CardBox = ({ item, bigCard }) => {
       className={styles["product-card"]}
     >
       <Card.Body>
-        <Card.Title className={styles["author"]}>{item.title}</Card.Title>
-        <Card.Text>{item.text}</Card.Text>
+        <Link
+          to={{
+            pathname: "/product-details/"+item.id,
+            query: "test",
+            search: "test",
+          }}
+          params={{ test: "test" }}
+        >
+          <Card.Title className={styles["author"]}>{item.title}</Card.Title>
+          <Card.Text>{item.text}</Card.Text>
+        </Link>
       </Card.Body>
       <Card.Img
         variant="top"
