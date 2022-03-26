@@ -2,6 +2,8 @@ import styles from "./Section.module.scss";
 import { Card, Button, Container, CardGroup } from "react-bootstrap";
 import CardGroupCarouselBox from "./CardGroupCarousel";
 const Section = ({ cards, title, bigCard, centerMode }) => {
+  console.log("Section", cards);
+  // debugger;
   const responsiveConfig = {
     superLargeDesktop: {
       // the naming can be any, depends on you.

@@ -348,7 +348,6 @@ const MainBox = () => {
     userCntx.setCarouselList(myData.carouselList);
     userCntx.setFeatureList(myData.featureList);
 
-    debugger
     setProductList(userCntx.productList)
 
     console.log("MainBox useEffect categoryList", userCntx.categoryList);
