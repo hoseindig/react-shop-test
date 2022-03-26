@@ -18,7 +18,7 @@ const NavbarForm = () => {
   const [barVisibility, setBarVisibility] = useState(false);
   const [scrollPosition, setSrollPosition] = useState(0);
   const handleScroll = () => {
-    console.log("handleScroll");
+    // console.log("handleScroll");
     const position = window.pageYOffset;
     position >= 50 ? setBarVisibility(true) : setBarVisibility(false);
     setSrollPosition(position);
