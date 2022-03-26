@@ -78,8 +78,10 @@ const TopNavbar = () => {
                 <i className={m.icon}></i>
                 {m.languagesOption
                   ? getTextByLanguagesSelcted(m.languagesOption).text
-                  : m.name }
+                  : m.name}
                 {/* {m.name} */}
+                {m.id === 1 && <span>({userCntx.compareList.length})</span>}
+                {m.id === 2 && <span>({userCntx.wishList.length})</span>}
               </Nav.Link>
             );
           })}
