@@ -11,6 +11,8 @@ export const myData = {
       image: "client-1.png",
       folder: "client",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -35,6 +37,8 @@ export const myData = {
       image: "client-2.png",
       folder: "client",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -59,6 +63,8 @@ export const myData = {
       image: "client-3.png",
       folder: "client",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -83,6 +89,8 @@ export const myData = {
       image: "client-4.png",
       folder: "client",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -107,6 +115,8 @@ export const myData = {
       image: "client-5.png",
       folder: "client",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -132,6 +142,8 @@ export const myData = {
       title: "Epple",
       image: "product-4.jpg",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -161,6 +173,8 @@ export const myData = {
       image: "product-5.jpg",
       text: "a Half Very Simple Things You To",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -189,6 +203,8 @@ export const myData = {
       image: "product-8.jpg",
       text: "  BOOK: Do You Really Need It? This ",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -217,6 +233,8 @@ export const myData = {
       image: "product-13.jpg",
       text: "BOOK: Do You Really Need It? This ",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -245,6 +263,8 @@ export const myData = {
       image: "product-2.jpg",
       text: "Revolutionize Your BOOK With ",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -273,6 +293,8 @@ export const myData = {
       image: "product-10.jpg",
       text: "Revolutionize Your BOOK With ",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -301,6 +323,8 @@ export const myData = {
       image: "product-3.jpg",
       text: "Revolutionize Your BOOK With ",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -329,6 +353,8 @@ export const myData = {
       image: "product-5.jpg",
       text: "a Half Very Simple Things You To",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -357,6 +383,8 @@ export const myData = {
       image: "product-8.jpg",
       text: "  BOOK: Do You Really Need It? This ",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -385,6 +413,8 @@ export const myData = {
       image: "product-3.jpg",
       text: "Revolutionize Your BOOK With ",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -413,6 +443,8 @@ export const myData = {
       image: "product-5.jpg",
       text: "a Half Very Simple Things You To",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -441,6 +473,8 @@ export const myData = {
       image: "product-8.jpg",
       text: "  BOOK: Do You Really Need It? This ",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -469,6 +503,8 @@ export const myData = {
       image: "product-5.jpg",
       text: "a Half Very Simple Things You To",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -497,6 +533,8 @@ export const myData = {
       image: "product-8.jpg",
       text: "  BOOK: Do You Really Need It? This ",
       tag: "book",
+      description:
+        "Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!",
       images: [
         "product-1.jpg",
         "product-2.jpg",
@@ -568,6 +606,17 @@ export const myData = {
       icon: "fas fa-life-ring",
       h5: "Help & Support",
       p: "Call us : + 0123.4567.89",
+    },
+  ],
+  reveiws: [
+    {
+      productId: 1,
+      userId: 1,
+      rate: 2,
+      userName: "ADMIN",
+      userImage: 1,
+      dateTime: "March 23, 2015",
+      text: "Lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi.",
     },
   ],
 };
