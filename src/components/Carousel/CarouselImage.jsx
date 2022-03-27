@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import styles from './CarouselImage.module.scss'
+import styles from "./CarouselImage.module.scss";
 const CarouselImage = ({ images, centerMode }) => {
   const responsive = {
     superLargeDesktop: {
@@ -22,7 +22,7 @@ const CarouselImage = ({ images, centerMode }) => {
     },
   };
   return (
-    <div style={{ height: 300 }}>
+    <div>
       <Carousel
         responsive={responsive}
         autoPlay={true}
@@ -35,7 +35,7 @@ const CarouselImage = ({ images, centerMode }) => {
         {images.map((item) => {
           return (
             <div key={item} className={styles.CarouselImage}>
-              <img src={"/images/products/" + item} alt=""   />
+              <img src={"/images/products/" + item} alt="" />
             </div>
           );
         })}
