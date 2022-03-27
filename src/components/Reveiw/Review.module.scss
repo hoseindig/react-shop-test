@@ -38,3 +38,17 @@
   font-weight: 600;
 }
 
+
+.add-new-review {
+  // padding: 10px;
+  text-align: left;
+  // background-color: red;
+  h4{
+    font-size: 1.2rem;
+  }
+  textarea,input,fieldset{
+    background-color: #f4f4f4;
+    border: 1px solid #ececec!important;
+    border-radius: 4px;
+  }
+}

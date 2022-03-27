@@ -2,16 +2,10 @@ import { useContext, useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { Row, Col, Container, Button } from "react-bootstrap";
 
-import TextField from "@mui/material/TextField";
-import TextareaAutosize from "@mui/material/TextareaAutosize";
-
 import Box from "@mui/material/Box";
-import Rating from "@mui/material/Rating";
-import Typography from "@mui/material/Typography";
 import CarouselImage from "./Carousel/CarouselImage";
 
 import Tab from "@mui/material/Tab";
-import Tabs from "@mui/material/Tabs";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
@@ -23,6 +17,8 @@ import styles from "./ProductDetails.module.scss";
 import Rate from "./rate/rate";
 import ReveiwsBox from "./Reveiw/reveiws";
 import { getReviewByProductId } from "../services/reviewService";
+
+import NewReview from "./Reveiw/NewReveiw";
 // https://mui.com/components/rating/
 const ProductDetails = (props) => {
   const userCntx = useContext(UserContext);
@@ -174,94 +170,13 @@ const ProductDetails = (props) => {
                   </TabPanel>
                   <TabPanel value="2">
                     <ReveiwsBox reviews={productReviews} item={passItem} />
+                    <NewReview />
                   </TabPanel>
                 </TabContext>
               </Box>
             </Col>
             <Col md={12}></Col>
           </Row>
-          <div className={styles["add-new-review-header"]}>
-            <Row className="m-4">
-              <Col md={12}>
-                <h4>ADD A REVIEW</h4>
-                <Box
-                  sx={{
-                    "& > legend": { mt: 2 },
-                  }}
-                >
-                  <Typography component="legend">Your Rating</Typography>
-                  <Rating
-                    name="simple-controlled"
-                    value={userRate}
-                    onChange={(event, newValue) => {
-                      setUserRate(newValue);
-                    }}
-                  />
-                </Box>
-              </Col>
-            </Row>
-            <Row>
-              <Col className="m-4">
-                {/* <TextField
-                required
-                id="outlined-required"
-                label="Comment"
-                defaultValue=""
-                fullWidth
-              /> */}
-                <span>Comment</span>
-                <TextareaAutosize
-                  style={{
-                    width: "100%",
-                    height: 150,
-                  }}
-                  maxRows={4}
-                  aria-label="maximum height"
-                  placeholder=""
-                  defaultValue=""
-                />
-              </Col>
-            </Row>
-            <Row>
-              <Col className="m-4">
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Name "
-                  defaultValue=""
-                  fullWidth
-                />
-              </Col>
-              <Col className="m-4">
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Email"
-                  defaultValue=""
-                  fullWidth
-                />
-              </Col>
-              <Col className="m-4">
-                <TextField
-                  fullWidth
-                  id="outlined-required"
-                  label="Website"
-                  defaultValue=""
-                />
-              </Col>
-            </Row>
-            <Row className="m-2">
-              <Col>
-                <Button
-                  variant="dark"
-                  className="p-3"
-                  style={{ width: 200, "text-transform": "uppercase" }}
-                >
-                  Post Comment
-                </Button>
-              </Col>
-            </Row>
-          </div>
         </div>
       )}
     </Container>
