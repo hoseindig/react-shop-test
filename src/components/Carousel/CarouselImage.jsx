@@ -22,7 +22,7 @@ const CarouselImage = ({ images, centerMode }) => {
     },
   };
   return (
-    <div>
+    <div className={styles.CarouselImage}>
       <Carousel
         responsive={responsive}
         autoPlay={true}
