@@ -167,3 +167,51 @@
     }
   }
 }
+.review-article {
+  p {
+    //   font-size: 14px;
+    color: #333;
+    text-align: justify;
+    line-height: 30px;
+    letter-spacing: 0.025em;
+  }
+}
+.review-comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: initial;
+  margin: 10px 0;
+  .avatar {
+    width: 60px;
+    margin-right: 30px;
+  }
+  .text {
+    // background-color: red;
+    border: 1px solid #ececec;
+    width: calc(100% - 70px);
+    padding: 1em 1em 0;
+    border-radius: 3px;
+    position: relative;
+    &:before {
+      background: #fff;
+      border-bottom: 1px solid #ececec;
+      border-left: 1px solid #ececec;
+      content: "";
+      display: block;
+      height: 10px;
+      left: -6px;
+      position: absolute;
+      top: 10px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      width: 10px;
+    }
+  }
+}
+.title-lg {
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+}
