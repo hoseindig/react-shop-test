@@ -31,7 +31,7 @@ const CardBox = ({ item, bigCard }) => {
         src={
           item.folder
             ? "images/" + item.folder + "/" + item.image
-            : "images/products/" + item.image
+            : "/images/products/" + item.image
         }
       />
 

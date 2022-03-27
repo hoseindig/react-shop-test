@@ -18,6 +18,7 @@ import { getReviewByProductId } from "../../services/reviewService";
 
 import NewReview from "../Reveiw/NewReveiw";
 import ProductInfo from "./ProductInfo/ProductInfo";
+import Section from "../section";
 // https://mui.com/components/rating/
 const ProductDetails = (props) => {
   const userCntx = useContext(UserContext);
@@ -25,7 +26,6 @@ const ProductDetails = (props) => {
   const moneySymbol = userCntx.siteSeting.priceUnitSelect.symbol;
 
   const [value, setValue] = useState("1");
-  const [userRate, setUserRate] = useState(5);
   const [productReviews, setProductReview] = useState([]);
 
   const handleChange = (event, newValue) => {
@@ -77,6 +77,11 @@ const ProductDetails = (props) => {
             </Col>
             <Col md={12}></Col>
           </Row>
+          <Section
+          title="RELATED PRODUCTS"
+          cards={userCntx.productList.filter((i) => i.category === passItem.category)}
+          centerMode={true}
+        />
         </div>
       )}
     </Container>

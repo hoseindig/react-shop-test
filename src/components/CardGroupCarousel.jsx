@@ -3,7 +3,7 @@ import styles from "./CardGroupBox.module.scss";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import CardInCardCarouselBox from "./CardCarousel/Card";
+import CardCarousel from "./CardCarousel/";
 import LargCardBoxForUserOpinion from "./LargCardBox";
 // https://www.npmjs.com/package/react-multi-carousel
 // https://www.npmjs.com/package/springstech-react-multi-carousel
@@ -49,7 +49,7 @@ const CardGroupCarouselBox = ({
               {bigCard ? (
                 <LargCardBoxForUserOpinion item={item} bigCard={bigCard} />
               ) : (
-                <CardInCardCarouselBox item={item} bigCard={bigCard} />
+                <CardCarousel item={item} bigCard={bigCard} />
               )}
             </div>
           );
