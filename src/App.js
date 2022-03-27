@@ -10,7 +10,7 @@ import UserProvider from "./store/userProvider";
 
 import MainBox from "./components/mainBox";
 import Login from "./components/Login";
-import ProductDetails from "./components/productDetails";
+import ProductDetails from "./components/Product/productDetails";
 import Footer from "./components/footer";
 
 
