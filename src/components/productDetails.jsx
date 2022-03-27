@@ -9,7 +9,7 @@ import styles from "./ProductDetails.module.scss";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
-
+import CarouselImage from "./Carousel/CarouselImage";
 const ProductDetails = (props) => {
   const userCntx = useContext(UserContext);
   const { productList } = userCntx;
@@ -29,6 +29,7 @@ const ProductDetails = (props) => {
         <Row className={styles["product-details"]}>
           <Col md={5}>
             <img src={"../images/products/" + passItem.image} alt="" />
+            <CarouselImage images={passItem.images} />
           </Col>
           <Col md={7} className={styles["product-details-info"]}>
             <div className={styles["tag-block"]}>tag : {passItem.tag}</div>
@@ -102,10 +103,18 @@ const ProductDetails = (props) => {
               </div>
             </div>
             <div className="compare-wishlist-row mt-4">
-              <a href="#" className={styles["add-link"]} onClick={()=>userCntx.addToWishList(passItem)}>
+              <a
+                href="#"
+                className={styles["add-link"]}
+                onClick={() => userCntx.addToWishList(passItem)}
+              >
                 <i className="fas fa-heart"></i>Add to Wish List
               </a>
-              <a href="#" className={styles["add-link"]} onClick={()=>userCntx.addToCompareList(passItem)}>
+              <a
+                href="#"
+                className={styles["add-link"]}
+                onClick={() => userCntx.addToCompareList(passItem)}
+              >
                 <i className="fas fa-random"></i>Add to Compare
               </a>
             </div>
