@@ -180,81 +180,88 @@ const ProductDetails = (props) => {
             </Col>
             <Col md={12}></Col>
           </Row>
-          <Row>
-            <Col md={12}>
-              <h4>ADD A REVIEW</h4>
-              <Box
-                sx={{
-                  "& > legend": { mt: 2 },
-                }}
-              >
-                <Typography component="legend">Your Rating</Typography>
-                <Rating
-                  name="simple-controlled"
-                  value={userRate}
-                  onChange={(event, newValue) => {
-                    setUserRate(newValue);
+          <div className={styles["add-new-review-header"]}>
+            <Row className="m-4">
+              <Col md={12}>
+                <h4>ADD A REVIEW</h4>
+                <Box
+                  sx={{
+                    "& > legend": { mt: 2 },
                   }}
-                />
-              </Box>
-            </Col>
-          </Row>
-          <Row>
-            <Col className="m-4">
-              {/* <TextField
+                >
+                  <Typography component="legend">Your Rating</Typography>
+                  <Rating
+                    name="simple-controlled"
+                    value={userRate}
+                    onChange={(event, newValue) => {
+                      setUserRate(newValue);
+                    }}
+                  />
+                </Box>
+              </Col>
+            </Row>
+            <Row>
+              <Col className="m-4">
+                {/* <TextField
                 required
                 id="outlined-required"
                 label="Comment"
                 defaultValue=""
                 fullWidth
               /> */}
-              <span>Comment</span>
-              <TextareaAutosize
-                style={{
-                  width: "100%",
-                  height: 150,
-                  border: "1px solid #c4c4c4",
-                }}
-                maxRows={4}
-                aria-label="maximum height"
-                placeholder=""
-                defaultValue=""
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col className="m-4">
-              <TextField
-                required
-                id="outlined-required"
-                label="Name "
-                defaultValue=""
-                fullWidth
-              />
-            </Col>
-            <Col className="m-4">
-              <TextField
-                required
-                id="outlined-required"
-                label="Email"
-                defaultValue=""
-                fullWidth
-              />
-            </Col>
-            <Col className="m-4">
-              <TextField
-                fullWidth
-                id="outlined-required"
-                label="Website"
-                defaultValue=""
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Button variant="dark">Post Comment</Button>
-            </Col>
-          </Row>
+                <span>Comment</span>
+                <TextareaAutosize
+                  style={{
+                    width: "100%",
+                    height: 150,
+                  }}
+                  maxRows={4}
+                  aria-label="maximum height"
+                  placeholder=""
+                  defaultValue=""
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col className="m-4">
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Name "
+                  defaultValue=""
+                  fullWidth
+                />
+              </Col>
+              <Col className="m-4">
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Email"
+                  defaultValue=""
+                  fullWidth
+                />
+              </Col>
+              <Col className="m-4">
+                <TextField
+                  fullWidth
+                  id="outlined-required"
+                  label="Website"
+                  defaultValue=""
+                />
+              </Col>
+            </Row>
+            <Row className="m-2">
+              <Col>
+                <Button
+                  variant="dark"
+                  className="p-3"
+                  style={{ width: 200, "text-transform": "uppercase" }}
+                >
+                  Post Comment
+                </Button>
+              </Col>
+            </Row>
+          </div>
         </div>
       )}
     </Container>
