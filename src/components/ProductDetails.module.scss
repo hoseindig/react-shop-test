@@ -76,9 +76,13 @@
     font-weight: 500;
     margin-right: 15px;
   }
+  input::-webkit-inner-spin-button {
+    display: none;
+  }
   .count-input-block-input {
     -webkit-appearance: textfield !important;
     -moz-appearance: textfield !important;
+
     appearance: none !important;
     color: #333;
     background-color: #eeeeee;
