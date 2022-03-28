@@ -1,6 +1,6 @@
 import Rate from "../rate/rate";
 import styles from "./Review.module.scss";
-const ReveiwsBox = ({ reviews,  item }) => {
+const ReveiwsBox = ({ reviews, item }) => {
   return (
     <div>
       <h4 className={styles["title-lg"]}>
@@ -11,7 +11,14 @@ const ReveiwsBox = ({ reviews,  item }) => {
           <div key={review._id}>
             <div className={styles["review-comment"]}>
               <div className={styles["avatar"]}>
-                <img src="/images/userImage/author-logo.jpg" alt="" />
+                <img
+                  src={
+                    review.userImage
+                      ? "/images/userImage/" + review.userImage
+                      : "/images/userImage/author-logo.jpg"
+                  }
+                  alt=""
+                />
               </div>
               <div className={styles["text"]}>
                 <div className="rating-block mb--15">
