@@ -59,6 +59,10 @@
       transform: scale(1);
     }
   }
+  a {
+    text-decoration: none;
+    color: black;
+  }
 
   &:hover {
     cursor: pointer;
