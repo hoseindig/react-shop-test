@@ -14,9 +14,10 @@ const CardBox = ({ item, bigCard }) => {
       className={styles["product-card"]}
     >
       <Card.Body>
+        {item.id}
         <Link
           to={{
-            pathname: "/product-details/"+item.id,
+            pathname: "/product-details/" + item.id,
             query: "test",
             search: "test",
           }}
