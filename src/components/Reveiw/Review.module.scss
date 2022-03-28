@@ -7,6 +7,9 @@
   .avatar {
     width: 60px;
     margin-right: 30px;
+    img {
+      width: 75px;
+    }
   }
   .text {
     // background-color: red;
@@ -38,17 +41,17 @@
   font-weight: 600;
 }
 
-
 .add-new-review {
   // padding: 10px;
   text-align: left;
   // background-color: red;
-  h4{
+  h4 {
     font-size: 1.2rem;
   }
-  textarea,input,fieldset{
-    background-color: #f4f4f4;
-    border: 1px solid #ececec!important;
+  textarea,
+  input {
+    // background-color: #f4f4f4;
+    // border: 1px solid #ececec!important;
     border-radius: 4px;
   }
 }
