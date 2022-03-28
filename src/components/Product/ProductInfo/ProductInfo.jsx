@@ -5,10 +5,10 @@ import CarouselImage from "../../Carousel/CarouselImage";
 import UserContext from "../../../store/userContext";
 import Rate from "../../rate/rate";
 
-const ProductInfo = ({  item }) => {
+const ProductInfo = ({ item }) => {
   const userCntx = useContext(UserContext);
   const moneySymbol = userCntx.siteSeting.priceUnitSelect.symbol;
-
+  const [qty, setQty] = useState(1);
   return (
     <div>
       <Row className={styles["product-details"]}>
@@ -68,7 +68,10 @@ const ProductInfo = ({  item }) => {
               <input
                 type="number"
                 className={styles["count-input-block-input"]}
-                value="1"
+                value={qty}
+                onChange={({ target: input }) => {
+                  setQty(input.value);
+                }}
               ></input>
             </div>
             <div className={styles["add-cart-btn"]}>
