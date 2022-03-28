@@ -235,6 +235,10 @@ const UserReducer = (state, action) => {
   if (action.type === "SetCategoryList") {
     return { ...state, categoryList: action.items };
   }
+
+  if (action.type === "SetUserData") {
+    return { ...state, user: action.item };
+  }
   return defaultState;
 };
 //#endregion
@@ -313,6 +317,14 @@ const UserProvider = (props) => {
     });
   };
 
+  const setUserData = (item) => {
+    console.log("SetUserData", item);
+    dispachState({
+      type: "SetUserData",
+      item: item,
+    });
+  };
+
   const addToCartItems = (item) => {
     console.log("addToCartItems", item);
     dispachState({
@@ -374,6 +386,8 @@ const UserProvider = (props) => {
     ...myState,
     userLogin: login,
     userLogout: logOut,
+
+    setUserData,
     siteSeting: {
       ...myState.siteSeting,
       setbarVisibilityCntx: setbarVisibility,

@@ -5,6 +5,7 @@ const UserContext = React.createContext({
   username: null,
   fullName: null,
   user: {},
+  setUserData: () => {},
   userLogin: () => {},
   userLogout: () => {},
   setPriceUnit: () => {},
