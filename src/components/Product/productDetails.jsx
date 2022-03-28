@@ -14,9 +14,9 @@ import UserContext from "../../store/userContext";
 import styles from "./ProductDetails.module.scss";
 
 import ReveiwsBox from "../Reveiw/reveiws";
-import { getReviewByProductId } from "../../services/reviewService";
+import { getReviewByProductId, saveReview } from "../../services/reviewService";
 
-import NewReview from "../Reveiw/NewReveiw";
+import NewReview from "../Reveiw/NewReview";
 import ProductInfo from "./ProductInfo/ProductInfo";
 import Section from "../section";
 // https://mui.com/components/rating/
@@ -35,6 +35,12 @@ const ProductDetails = (props) => {
   const { id } = useParams();
   let passItem = null;
   passItem = productList.find((i) => i.id === Number(id));
+
+  const getProductReview = () => {
+    if (passItem) {
+      setProductReview(getReviewByProductId(passItem.id));
+    }
+  };
   useEffect(() => {
     if (id) {
       if (passItem) setProductReview(getReviewByProductId(passItem.id));
@@ -46,7 +52,7 @@ const ProductDetails = (props) => {
       {passItem && (
         <div>
           {/* {passItem.id} */}
-          <ProductInfo item={passItem}/>
+          <ProductInfo item={passItem} />
           <Row>
             <Col md={12}>
               <Box sx={{ width: "100%", typography: "body1" }}>
@@ -70,7 +76,7 @@ const ProductDetails = (props) => {
                   </TabPanel>
                   <TabPanel value="2">
                     <ReveiwsBox reviews={productReviews} item={passItem} />
-                    <NewReview />
+                    <NewReview getReview={getProductReview} productId={passItem.id}/>
                   </TabPanel>
                 </TabContext>
               </Box>
@@ -78,10 +84,12 @@ const ProductDetails = (props) => {
             <Col md={12}></Col>
           </Row>
           <Section
-          title="RELATED PRODUCTS"
-          cards={userCntx.productList.filter((i) => i.category === passItem.category)}
-          centerMode={true}
-        />
+            title="RELATED PRODUCTS"
+            cards={userCntx.productList.filter(
+              (i) => i.category === passItem.category
+            )}
+            centerMode={true}
+          />
         </div>
       )}
     </Container>
