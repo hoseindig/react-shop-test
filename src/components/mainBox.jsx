@@ -16,13 +16,19 @@ const MainBox = () => {
 
   useEffect(() => {
     console.log("MainBox useEffect", myData);
+    userCntx.setUserData({//fake login
+      userName: "hosseinx",
+      userFullName: "hossein sheiykhi",
+      userId: 13439,
+      userImage: "hoseinx.gif",
+    });
+
     userCntx.setProductList(myData.productList);
 
     userCntx.setCategoryList(myData.categoryList);
     userCntx.setClientList(myData.clientList);
     userCntx.setCarouselList(myData.carouselList);
     userCntx.setFeatureList(myData.featureList);
-
 
     console.log("MainBox useEffect categoryList", userCntx.categoryList);
     console.log("MainBox useEffect carouselList", userCntx.carouselList);
