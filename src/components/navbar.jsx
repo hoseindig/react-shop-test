@@ -47,7 +47,7 @@ const NavbarForm = () => {
       <Container>
         <Navbar.Brand>
           <Link to="/">
-            <img src="images/logo.jpg" alt="" />
+            <img src="/images/logo.jpg" alt="" />
           </Link>
         </Navbar.Brand>
         {/* search */}
