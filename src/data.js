@@ -1,8 +1,10 @@
 export const myData = {
   categoryList: [
-    { id: 1, name: "art" },
-    { id: 2, name: "photography" },
-    { id: 3, name: "biographies " },
+    { id: 1, name: "comic" },
+    { id: 2, name: "art & photography" },
+    { id: 3, name: "business  " },
+    { id: 4, name: "children " },
+    { id: 5, name: "travel " },
   ],
   clientList: [
     {
@@ -254,7 +256,7 @@ export const myData = {
       mostViewedProducts: true,
       newArrivals: true,
       featuredProducts: false,
-      category: 2,
+      category: 3,
       isSpecialOffer: true,
     },
     {
@@ -344,7 +346,7 @@ export const myData = {
       mostViewedProducts: false,
       newArrivals: true,
       featuredProducts: true,
-      category: 3,
+      category: 4,
       isSpecialOffer: false,
     },
     {
@@ -374,7 +376,7 @@ export const myData = {
       mostViewedProducts: true,
       newArrivals: true,
       featuredProducts: false,
-      category: 1,
+      category: 5,
       isSpecialOffer: false,
     },
     {
@@ -434,7 +436,7 @@ export const myData = {
       mostViewedProducts: true,
       newArrivals: true,
       featuredProducts: false,
-      category: 1,
+      category: 5,
       isSpecialOffer: false,
     },
     {
@@ -464,7 +466,7 @@ export const myData = {
       mostViewedProducts: true,
       newArrivals: true,
       featuredProducts: false,
-      category: 1,
+      category: 3,
       isSpecialOffer: false,
     },
     {
@@ -494,7 +496,7 @@ export const myData = {
       mostViewedProducts: false,
       newArrivals: true,
       featuredProducts: true,
-      category: 1,
+      category: 4,
       isSpecialOffer: false,
     },
     {

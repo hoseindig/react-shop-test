@@ -12,7 +12,7 @@ import MainBox from "./components/mainBox";
 import Login from "./components/Login";
 import ProductDetails from "./components/Product/productDetails";
 import Footer from "./components/footer";
-
+import CategoryProduct from "./components/Product/categoryProduct";
 
 function App() {
   // style={{height: "calc(100vh - 344px)"}}
@@ -31,6 +31,9 @@ function App() {
           {/* <MainMenuNavbar /> */}
           {/* <Row> */}
           <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/product-details/:id" element={<ProductDetails />} />
+            <Route path="/category-product/:categoryId" element={<CategoryProduct />} />
             <Route
               path="/"
               exec
@@ -42,8 +45,7 @@ function App() {
                 </Row>
               }
             />
-            <Route path="/login" element={<Login />} />
-            <Route path="/product-details/:id" element={<ProductDetails />} />
+
           </Routes>
           {/* </Row> */}
           <Row>
