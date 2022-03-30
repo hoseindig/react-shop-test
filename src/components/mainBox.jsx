@@ -10,13 +10,14 @@ import ProductsInTabAndSpecialOffer from "./ProductsInTabAndSpecialOffer";
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../store/userContext";
 import { myData } from "../data";
-
+import BrandCarousel from "./Carousel/BrandCarousel";
 const MainBox = () => {
   const userCntx = useContext(UserContext);
 
   useEffect(() => {
     console.log("MainBox useEffect", myData);
-    userCntx.setUserData({//fake login
+    userCntx.setUserData({
+      //fake login
       userName: "hosseinx",
       userFullName: "hossein sheiykhi",
       userId: 13439,
@@ -61,6 +62,7 @@ const MainBox = () => {
           cards={userCntx.clientList}
           bigCard={true}
         />
+        <BrandCarousel />
       </Container>
     </Row>
   );

@@ -8,7 +8,7 @@ const CardItem = ({ items }) => {
         return (
           <div className="cart-product" key={i.id}>
             <a href="product-details.html" className="image">
-              <img src={"images/products/" + i.image} alt="" />
+              <img src={"/images/products/" + i.image} alt="" />
             </a>
             <div className="content">
               <h3 className="title">
