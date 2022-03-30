@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import styles from "./BrandCarousel.module.scss";
 import { Container } from "react-bootstrap";
 const BrandCarousel = () => {
   const images = [
@@ -32,20 +32,22 @@ const BrandCarousel = () => {
   };
   return (
     <Container>
-      <Carousel
-        responsive={responsive}
-        autoPlay={true}
-        autoPlaySpeed={10000}
-        showDots={false}
-        infinite={true}
-        dotListClass="custom-dot-list-style"
-        centerMode={false}
-        arrows={false}
-      >
-        {images.map((image) => {
-          return <img key={image} src={image} alt="" width={200} />;
-        })}
-      </Carousel>
+      <div className={styles.box}>
+        <Carousel
+          responsive={responsive}
+          autoPlay={true}
+          autoPlaySpeed={10000}
+          showDots={false}
+          infinite={true}
+          dotListClass="custom-dot-list-style"
+          centerMode={false}
+          arrows={false}
+        >
+          {images.map((image) => {
+            return <img key={image} src={image} alt="" width={200} />;
+          })}
+        </Carousel>
+      </div>
     </Container>
   );
 };

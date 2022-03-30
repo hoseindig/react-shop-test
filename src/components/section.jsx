@@ -24,19 +24,19 @@ const Section = ({ cards, title, bigCard, centerMode }) => {
     },
   };
   return (
-    <div className={styles.box}>
-      <div className={styles.header}>
-        <h1>{title} </h1>
-      </div>
-      <Container>
+    <Container>
+      <div className={styles.box}>
+        <div className={styles.header}>
+          <h1>{title} </h1>
+        </div>
         <CardGroupCarouselBox
           cards={cards}
           bigCard={bigCard}
           centerMode={centerMode ? true : false}
           responsiveConfig={bigCard ? responsiveConfig : null}
         />
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 };
 

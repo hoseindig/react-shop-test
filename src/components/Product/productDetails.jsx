@@ -19,6 +19,7 @@ import { getReviewByProductId, saveReview } from "../../services/reviewService";
 import NewReview from "../Reveiw/NewReview";
 import ProductInfo from "./ProductInfo/ProductInfo";
 import Section from "../section";
+import BrandCarousel from "../Carousel/BrandCarousel";
 // https://mui.com/components/rating/
 const ProductDetails = (props) => {
   const userCntx = useContext(UserContext);
@@ -92,6 +93,7 @@ const ProductDetails = (props) => {
           />
         </div>
       )}
+      <BrandCarousel></BrandCarousel>
     </Container>
   );
 };
