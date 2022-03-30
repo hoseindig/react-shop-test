@@ -26,7 +26,6 @@ const ProductInfo = ({ item }) => {
             <li>
               Ex Tax:
               <span className={styles["list-value"]}>
-                {" "}
                 {moneySymbol}
                 {item.exTax}
               </span>
@@ -38,6 +37,10 @@ const ProductInfo = ({ item }) => {
             <li>
               Product Code:
               <span className={styles["list-value"]}>{item.productCode}</span>
+            </li>
+            <li>
+              Product Id:
+              <span className={styles["list-value"]}>{item.id}</span>
             </li>
             <li>
               Reward Points:
