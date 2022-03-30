@@ -22,9 +22,9 @@ import Section from "../section";
 import BrandCarousel from "../Carousel/BrandCarousel";
 // https://mui.com/components/rating/
 const ProductDetails = (props) => {
+  console.log('%cProductDetails','background:blue');
   const userCntx = useContext(UserContext);
   const { productList } = userCntx;
-  const moneySymbol = userCntx.siteSeting.priceUnitSelect.symbol;
 
   const [value, setValue] = useState("1");
   const [productReviews, setProductReview] = useState([]);
@@ -43,11 +43,11 @@ const ProductDetails = (props) => {
     }
   };
   useEffect(() => {
+    console.log('%cuseEffect','background:green');
     if (id) {
       if (passItem) setProductReview(getReviewByProductId(passItem.id));
     }
-  }, []);
-  console.log("ProductDetails", passItem);
+  }, [id]);
   return (
     <Container>
       {passItem && (
