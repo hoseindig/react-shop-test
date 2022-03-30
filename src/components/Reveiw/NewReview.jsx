@@ -14,6 +14,7 @@ import { toast } from "react-toastify";
 import UserContext from "../../store/userContext";
 
 const NewReview = ({ getReview, productId }) => {
+  console.log("NewReview productId ", productId);
   const userCntx = useContext(UserContext);
   const schema = {
     name: Joi.string().required().label("Name"),
@@ -45,6 +46,7 @@ const NewReview = ({ getReview, productId }) => {
         userName: user.userName,
         userId: user.userId,
         userImage: user.userImage,
+        productId: productId,
       });
       if (res._id) {
         toast.success("Reveiw Saved.");
