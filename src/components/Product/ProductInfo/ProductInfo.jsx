@@ -74,7 +74,10 @@ const ProductInfo = ({ item }) => {
                 }}
               ></input>
             </div>
-            <div className={styles["add-cart-btn"]}>
+            <div
+              className={styles["add-cart-btn"]}
+              onClick={() => userCntx.addToCartItems({ ...item, count: qty })}
+            >
               <a href="#">
                 <span className="plus-icon">+</span>Add to Cart
               </a>
