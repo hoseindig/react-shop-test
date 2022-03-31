@@ -7,15 +7,16 @@ const CategoryProduct = () => {
   const userCntx = useContext(UserContext);
   const { productList, categoryList } = userCntx;
   const category = categoryList.find((c) => c.id === Number(categoryId));
-  debugger;
-  return ( 
+  return (
     <div>
-      {/* <h1>CategoryProduct</h1> */}
-      <Section
-        title={category.name}
-        cards={productList.filter((i) => i.category === Number(categoryId))}
-        centerMode={true}
-      />
+      {category && (
+        <Section
+          title={category.name}
+          cards={productList.filter((i) => i.category === Number(categoryId))}
+          centerMode={true}
+          slide={false}
+        />
+      )}
     </div>
   );
 };
