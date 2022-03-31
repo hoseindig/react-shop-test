@@ -1,6 +1,9 @@
 .product-card {
   transform: scale(0.9);
   transition: 0.2s;
+  border: 0;
+  // border-top: 0;
+  // border-bottom: 0;
   h3 {
     font-weight: 500;
   }
