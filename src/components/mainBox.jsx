@@ -46,11 +46,14 @@ const MainBox = () => {
           title="arts & photography books"
           cards={userCntx.productList.filter((i) => i.category === 1)}
           centerMode={true}
+          slide={true}
         />
         <Section
           title="BIOGRAPHIES BOOKS"
           cards={userCntx.productList.filter((i) => i.category === 3)}
           centerMode={true}
+          slide={true}
+
         />
 
         <FeaturesBox features={userCntx.featureList} />
@@ -61,6 +64,8 @@ const MainBox = () => {
           title="CLIENT TESTIMONIALS"
           cards={userCntx.clientList}
           bigCard={true}
+          slide={false}
+
         />
         <BrandCarousel />
       </Container>
