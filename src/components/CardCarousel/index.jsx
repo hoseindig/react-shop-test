@@ -9,7 +9,7 @@ const CardBox = ({ item, bigCard }) => {
 
   return (
     <Card
-      style={{ width: bigCard ? "100%" : "18rem" }}
+      style={{ width: bigCard ? "100%" : "100%" }}
       key={item.id}
       className={styles["product-card"]}
     >
