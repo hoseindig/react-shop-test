@@ -7,10 +7,10 @@ import Rate from "../../rate/rate";
 
 const ProductInfo = ({ item }) => {
   const userCntx = useContext(UserContext);
+  const moneySymbol = userCntx.siteSeting.priceUnitSelect.symbol;
   const { productList, categoryList } = userCntx;
   const category = categoryList.find((c) => c.id === Number(item.category));
 
-  const moneySymbol = userCntx.siteSeting.priceUnitSelect.symbol;
   const [qty, setQty] = useState(1);
   return (
     <div>
