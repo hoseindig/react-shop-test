@@ -2,8 +2,8 @@ import styles from "./login.module.scss";
 
 const Singup = () => {
   return (
-    <div class={styles["login-form"]}>
-      <h4 class={styles["login-title"]}>New Customer</h4>
+    <div className={styles["login-form"]}>
+      <h4 className={styles["login-title"]}>New Customer</h4>
       <p>
         <span className="font-weight-bold">I am a new customer</span>
       </p>
