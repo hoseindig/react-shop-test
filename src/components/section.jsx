@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, Button, Container, CardGroup, Row, Col } from "react-bootstrap";
 import CardGroupCarouselBox from "./CardGroupCarousel";
 import CardCarousel from "./CardCarousel/";
@@ -8,10 +8,58 @@ import Combo from "./base/combo";
 import LargCardBox from "./LargCardBox";
 import BrandCarousel from "./Carousel/BrandCarousel";
 const Section = ({ cards, title, bigCard, centerMode, slide }) => {
+  const [toolbarMode, setToolbarMode] = useState(1);
+  const [filter, setFilter] = useState(1);
+  const [filteredCards, setFilteredCards] = useState(cards);
+
+  useEffect(() => {
+    console.log("%cuseEffect filter", "background:blue", filter);
+
+    let CopyOffilteredCards = JSON.parse(JSON.stringify(filteredCards));
+    // CopyOffilteredCards.sort(function (a, b) {
+    //   return a.title.localeCompare(b.title);
+    // });
+    let filterVariable = 1;
+    switch (filter) {
+      case 1:
+        CopyOffilteredCards.sort((a, b) => (a.title > b.title ? 1 : -1)); //filterVariable = 1;
+        break;
+      case 2:
+        CopyOffilteredCards.sort((a, b) => (a.title < b.title ? 1 : -1)); //filterVariable = -1;
+        break;
+      case 3:
+        CopyOffilteredCards.sort((a, b) => (a.price > b.price ? 1 : -1));
+        break;
+      case 4:
+        CopyOffilteredCards.sort((a, b) => (a.price < b.price ? 1 : -1));
+        break;
+      case 5:
+        CopyOffilteredCards.sort((a, b) => (a.rate < b.rate ? 1 : -1));
+        break;
+      case 6:
+        CopyOffilteredCards.sort((a, b) => (a.rate > b.rate ? 1 : -1));
+      // case 7:
+      //   filterVariable = "Saturday";
+      // case 8:
+      //   filterVariable = "Saturday";
+      default:
+        filterVariable = 0;
+        break;
+    }
+
+    CopyOffilteredCards.forEach((element) => {
+      console.log("price", element.price, "rate", element.rate);
+    });
+    // console.log(filteredCards, CopyOffilteredCards);
+    setFilteredCards(CopyOffilteredCards);
+  }, [filter]);
   // console.log("Section", cards);
   // debugger;
 
-  const [toolbarMode, setToolbarMode] = useState(1);
+  const handleChange = (event) => {
+    // debugger;
+    setFilter(event.target.value);
+  };
   const responsiveConfig = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -46,9 +94,10 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
     { id: 4, title: "Sort By Price (Higher > Lower)" },
     { id: 5, title: "Sort By Rate (Higher )" },
     { id: 6, title: "Sort By Rate (Lower)" },
-    { id: 7, title: "Sort By Model (A-Z)" },
-    { id: 8, title: "Sort By Model (Z-A)" },
+    // { id: 7, title: "Sort By Model (A-Z)" },
+    // { id: 8, title: "Sort By Model (Z-A)" },
   ];
+
   return (
     <>
       <Container>
@@ -57,38 +106,45 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
             <h1>{title} </h1>
           </div>
 
-          <div className={styles.toolbar}>
-            <div className={styles.icon}>
-              <div
-                onClick={() => setToolbarMode(1)}
-                className={toolbarMode === 1 ? styles.active : ""}
-              >
-                <i className="fas fa-th"></i>
+          {/* toolbar */}
+          {!slide && (
+            <div className={styles.toolbar}>
+              <div className={styles.icon}>
+                <div
+                  onClick={() => setToolbarMode(1)}
+                  className={toolbarMode === 1 ? styles.active : ""}
+                >
+                  <i className="fas fa-th"></i>
+                </div>
+                <div
+                  onClick={() => setToolbarMode(2)}
+                  className={toolbarMode === 2 ? styles.active : ""}
+                >
+                  <span className={styles["grid-four-icon"]}>
+                    <i className="fas fa-grip-vertical"></i>
+                    <i className="fas fa-grip-vertical"></i>
+                  </span>
+                </div>
+                <div
+                  onClick={() => setToolbarMode(3)}
+                  className={toolbarMode === 3 ? styles.active : ""}
+                >
+                  <i className="fas fa-list"></i>
+                </div>
               </div>
-              <div
-                onClick={() => setToolbarMode(2)}
-                className={toolbarMode === 2 ? styles.active : ""}
-              >
-                <span className={styles["grid-four-icon"]}>
-                  <i className="fas fa-grip-vertical"></i>
-                  <i className="fas fa-grip-vertical"></i>
-                </span>
-              </div>
-              <div
-                onClick={() => setToolbarMode(3)}
-                className={toolbarMode === 3 ? styles.active : ""}
-              >
-                <i className="fas fa-list"></i>
-              </div>
+              <div>Showing 1 to 9 of 14 (2 Pages)</div>
+              <Combo
+                name={"SortBy"}
+                lebel="Sort By"
+                options={sortTypeList}
+                defaultValue={99}
+                noLebel={true}
+                onChange={handleChange}
+              />
             </div>
-            <div>Showing 1 to 9 of 14 (2 Pages)</div>
-            <Combo
-              lebel="Sort By"
-              options={sortTypeList}
-              defaultValue={99}
-              noLebel={true}
-            />
-          </div>
+          )}
+
+          {/* slide */}
           {(slide || bigCard) && (
             <CardGroupCarouselBox
               cards={cards}
@@ -97,11 +153,12 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
               responsiveConfig={bigCard ? responsiveConfig : null}
             />
           )}
+          {/* grid-mode */}
           {!slide && !bigCard && (
             <div className={styles["grid-mode"]}>
               <Container>
                 <Row>
-                  {cards.map((c) => {
+                  {filteredCards.map((c) => {
                     return (
                       <Col
                         key={c.id}
@@ -126,7 +183,7 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
           )}
         </div>
       </Container>
-      <BrandCarousel></BrandCarousel>
+      {!slide && !bigCard && <BrandCarousel></BrandCarousel>}
     </>
   );
 };

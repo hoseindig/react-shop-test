@@ -3,6 +3,7 @@ import styles from "../CardGroupBox.module.scss";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../store/userContext";
+import Rate from "../rate/rate";
 const CardBox = ({ item, bigCard }) => {
   const userCntx = useContext(UserContext);
   const moneySymbol = userCntx.siteSeting.priceUnitSelect.symbol;
@@ -43,6 +44,7 @@ const CardBox = ({ item, bigCard }) => {
         onClick={() => userCntx.addToCartItems(item)}
       ></i>
       <Card.Body>
+        <Rate rate={item.rate} />
         <Card.Text className={styles["price-block"]}>
           <span className={styles["price"]}>
             {moneySymbol}

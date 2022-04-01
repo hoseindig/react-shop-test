@@ -90,6 +90,7 @@ const ProductDetails = (props) => {
               (i) => i.category === passItem.category
             )}
             centerMode={true}
+            slide={true}
           />
         </div>
       )}
