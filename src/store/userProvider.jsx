@@ -335,9 +335,10 @@ const UserProvider = (props) => {
 
   const removeFromCartItems = (item) => {
     console.log("removeFromCartItems", item);
+    debugger
     dispachState({
       type: "RemoveFromCartItems",
-      items: item,
+      item: item,
     });
   };
 
