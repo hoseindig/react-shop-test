@@ -47,7 +47,7 @@ const NavbarForm = () => {
       <Container className={styles.box}>
         <Navbar.Brand>
           <Link to="/">
-            <img src="/images/logo.jpg" alt="" />
+            <img src="/images/logo.png" alt="" height={60}/>
           </Link>
         </Navbar.Brand>
         {/* search */}
