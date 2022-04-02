@@ -44,7 +44,7 @@ const NavbarForm = () => {
   };
   return (
     <Navbar expand="lg" className={barVisibility ? "showBar" : "hideBar"}>
-      <Container>
+      <Container className={styles.box}>
         <Navbar.Brand>
           <Link to="/">
             <img src="/images/logo.jpg" alt="" />
