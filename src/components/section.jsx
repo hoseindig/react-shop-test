@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import CardGroupCarouselBox from "./CardGroupCarousel";
 import CardCarousel from "./CardCarousel/";
 import PaginationBar from "./base/PaginationBar";
@@ -79,7 +75,6 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
   }, [page]);
 
   const handleChange = ({ target: input }) => {
-    // debugger;
     if (input.name === "SortBy") setFilter(input.value);
     if (input.name === "ShowBy") setPage(input.value);
   };
@@ -158,7 +153,7 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
               {/* <div>(all items : {cards.length}) Showing 1 to 9 of 14 ({pages} Pages)</div> */}
               <div>
                 (all items : {cards.length})({pages} Pages) Active Page :{" "}
-                {activePage} 
+                {activePage}
               </div>
               <Combo
                 name={"ShowBy"}
@@ -188,12 +183,17 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
               responsiveConfig={bigCard ? responsiveConfig : null}
             />
           )}
+          {!slide && !bigCard && (
+            <PaginationBar
+              pages={pages}
+              handleActivePage={setActivePage}
+              activePage={activePage}
+            />
+          )}
           {/* grid-mode */}
           {!slide && !bigCard && (
             <div className={styles["grid-mode"]}>
               <Container>
-                <PaginationBar pages={pages} handleActivePage={setActivePage} activePage={activePage}/>
-
                 <Row>
                   {filteredCards.map((c) => {
                     return (
@@ -219,7 +219,15 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
             </div>
           )}
         </div>
+        {!slide && !bigCard && (
+          <PaginationBar
+            pages={pages}
+            handleActivePage={setActivePage}
+            activePage={activePage}
+          />
+        )}
       </Container>
+
       {!slide && !bigCard && <BrandCarousel></BrandCarousel>}
     </>
   );
