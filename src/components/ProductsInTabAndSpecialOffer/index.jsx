@@ -10,7 +10,7 @@ const ProductsInTabAndSpecialOffer = ({ cards }) => {
           <Col md={3}>
             <SpecialOffer cards={cards.filter((i) => i.isSpecialOffer)} />
           </Col>
-          <Col md={9}>
+          <Col md={9} className={[styles.offerTab]}>
             <ProductsInTab cards={cards} />
           </Col>
         </Row>
