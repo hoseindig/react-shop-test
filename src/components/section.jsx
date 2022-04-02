@@ -101,7 +101,6 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
     { id: 3, title: "3" },
     { id: 6, title: "6" },
     { id: 9, title: "9" },
-    { id: 10, title: "10" },
     { id: 12, title: "12" },
   ];
   const sortTypeList = [
@@ -125,7 +124,7 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
           </div>
 
           {/* toolbar */}
-          {!slide && (
+          {!slide && !bigCard && (
             <div className={styles.toolbar}>
               <div className={styles.icon}>
                 <div
@@ -155,26 +154,28 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
                 (all items : {cards.length})({pages} Pages) Active Page :{" "}
                 {activePage}
               </div>
-              <Combo
-                name={"ShowBy"}
-                lebel="Show By"
-                options={showTypeList}
-                defaultValue={6}
-                noLebel={true}
-                onChange={handleChange}
-              />
-              <Combo
-                name={"SortBy"}
-                lebel="Sort By"
-                options={sortTypeList}
-                defaultValue={99}
-                noLebel={true}
-                onChange={handleChange}
-              />
+              <div>
+                <Combo
+                  name={"ShowBy"}
+                  lebel="Show By"
+                  options={showTypeList}
+                  defaultValue={6}
+                  noLebel={false}
+                  onChange={handleChange}
+                />
+                <Combo
+                  name={"SortBy"}
+                  lebel="Sort By"
+                  options={sortTypeList}
+                  defaultValue={99}
+                  noLebel={false}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
           )}
 
-          {/* slide */}
+          {/* Carousel slider image */}
           {(slide || bigCard) && (
             <CardGroupCarouselBox
               cards={cards}
