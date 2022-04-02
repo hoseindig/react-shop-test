@@ -13,7 +13,30 @@ import { myData } from "../data";
 import BrandCarousel from "./Carousel/BrandCarousel";
 const MainBox = () => {
   const userCntx = useContext(UserContext);
+  const [isVisible, setIsVisible] = useState(false);
+  // Top: 0 takes us all the way back to the top of the page
+  // Behavior: smooth keeps it smooth!
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => {
+    // Button is displayed after scrolling for 500 pixels
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 500) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
 
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+  //////////////////////////////////////////
   useEffect(() => {
     console.log("MainBox useEffect", myData);
     userCntx.setUserData({
@@ -58,7 +81,7 @@ const MainBox = () => {
         <FeaturesBox features={userCntx.featureList} />
         <PromoImage />
       </Container>
-      <ProductsInTabAndSpecialOffer cards={userCntx.productList} /> 
+      <ProductsInTabAndSpecialOffer cards={userCntx.productList} />
       <Container>
         <Section
           title="CLIENT TESTIMONIALS"
@@ -68,6 +91,11 @@ const MainBox = () => {
         />
         <BrandCarousel />
       </Container>
+      {isVisible && (
+        <div className={styles["scrollUp"]} onClick={scrollToTop}>
+          <i className="fa fa-arrow-right" aria-hidden="true"></i>
+        </div>
+      )}
     </Row>
   );
 };
