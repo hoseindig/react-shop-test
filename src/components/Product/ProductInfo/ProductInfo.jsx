@@ -111,15 +111,7 @@ const ProductInfo = ({ item }) => {
               <i className="fas fa-random"></i>Add to Compare
             </a>
           </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+ 
         </Col>
       </Row>
     </div>

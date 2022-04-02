@@ -183,6 +183,7 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
               responsiveConfig={bigCard ? responsiveConfig : null}
             />
           )}
+          {/* PaginationBar */}
           {!slide && !bigCard && (
             <PaginationBar
               pages={pages}
@@ -219,6 +220,7 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
             </div>
           )}
         </div>
+        {/* PaginationBar */}
         {!slide && !bigCard && (
           <PaginationBar
             pages={pages}
