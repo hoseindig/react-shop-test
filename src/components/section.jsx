@@ -1,16 +1,44 @@
 import { useState, useEffect } from "react";
-import { Card, Button, Container, CardGroup, Row, Col } from "react-bootstrap";
+import {
+  Card,
+  Button,
+  Container,
+  CardGroup,
+  Row,
+  Col,
+  Pagination,
+} from "react-bootstrap";
 import CardGroupCarouselBox from "./CardGroupCarousel";
 import CardCarousel from "./CardCarousel/";
-
+import TablePagination from "@mui/material/TablePagination";
+import PaginationBar from "./base/PaginationBar";
 import styles from "./Section.module.scss";
 import Combo from "./base/combo";
 import LargCardBox from "./LargCardBox";
 import BrandCarousel from "./Carousel/BrandCarousel";
+
 const Section = ({ cards, title, bigCard, centerMode, slide }) => {
   const [toolbarMode, setToolbarMode] = useState(1);
   const [filter, setFilter] = useState(1);
   const [filteredCards, setFilteredCards] = useState(cards);
+  const [page, setPage] = useState(6);
+  const [activePage, setActivePage] = useState(1);
+  const [pages, setPages] = useState(2);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+
+  const paginate = (array, page_size, page_number) => {
+    // human-readable page numbers usually start with 1, so we reduce 1 in the first argument
+    return array.slice((page_number - 1) * page_size, page_number * page_size);
+  };
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
 
   useEffect(() => {
     console.log("%cuseEffect filter", "background:blue", filter);
@@ -19,7 +47,6 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
     // CopyOffilteredCards.sort(function (a, b) {
     //   return a.title.localeCompare(b.title);
     // });
-    let filterVariable = 1;
     switch (filter) {
       case 1:
         CopyOffilteredCards.sort((a, b) => (a.title > b.title ? 1 : -1)); //filterVariable = 1;
@@ -42,8 +69,8 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
       //   filterVariable = "Saturday";
       // case 8:
       //   filterVariable = "Saturday";
-      default:
-        filterVariable = 0;
+      default: //filterVariable = 1;
+        CopyOffilteredCards.sort((a, b) => (a.title > b.title ? 1 : -1));
         break;
     }
 
@@ -53,12 +80,23 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
     // console.log(filteredCards, CopyOffilteredCards);
     setFilteredCards(CopyOffilteredCards);
   }, [filter]);
-  // console.log("Section", cards);
-  // debugger;
 
-  const handleChange = (event) => {
+  useEffect(() => {
+    let CopyOfcards = JSON.parse(JSON.stringify(cards));
+    const pages = Math.round(cards.length / page);
+    setPages(pages);
+    const res = paginate(CopyOfcards, page, activePage);
+    setFilteredCards(res);
+  }, [page, activePage]);
+
+  useEffect(() => {
+    setActivePage(1);
+  }, [page]);
+
+  const handleChange = ({ target: input }) => {
     // debugger;
-    setFilter(event.target.value);
+    if (input.name === "SortBy") setFilter(input.value);
+    if (input.name === "ShowBy") setPage(input.value);
   };
   const responsiveConfig = {
     superLargeDesktop: {
@@ -132,7 +170,19 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
                   <i className="fas fa-list"></i>
                 </div>
               </div>
-              <div>Showing 1 to 9 of 14 (2 Pages)</div>
+              {/* <div>(all items : {cards.length}) Showing 1 to 9 of 14 ({pages} Pages)</div> */}
+              <div>
+                (all items : {cards.length})({pages} Pages) Active Page :{" "}
+                {activePage} 
+              </div>
+              <Combo
+                name={"ShowBy"}
+                lebel="Show By"
+                options={showTypeList}
+                defaultValue={6}
+                noLebel={true}
+                onChange={handleChange}
+              />
               <Combo
                 name={"SortBy"}
                 lebel="Sort By"
@@ -157,6 +207,8 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
           {!slide && !bigCard && (
             <div className={styles["grid-mode"]}>
               <Container>
+                <PaginationBar pages={pages} handleActivePage={setActivePage} activePage={activePage}/>
+
                 <Row>
                   {filteredCards.map((c) => {
                     return (
