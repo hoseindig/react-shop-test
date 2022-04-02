@@ -1,18 +1,20 @@
 import { Card, Button, Container, CardGroup } from "react-bootstrap";
 import styles from "../CardGroupBox.module.scss";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../store/userContext";
 import Rate from "../rate/rate";
 const CardBox = ({ item, bigCard }) => {
   const userCntx = useContext(UserContext);
   const moneySymbol = userCntx.siteSeting.priceUnitSelect.symbol;
-
+  const [mouseOver, setMouseOver] = useState(false);
   return (
     <Card
       style={{ width: bigCard ? "100%" : "100%" }}
       key={item.id}
       className={styles["product-card"]}
+      onMouseEnter={() => setMouseOver(true)}
+      onMouseLeave={() => setMouseOver(false)}
     >
       <Card.Body>
         {item.id}
@@ -36,13 +38,31 @@ const CardBox = ({ item, bigCard }) => {
             : "/images/products/" + item.image
         }
       />
+      <div>
+        {mouseOver && (
+          <i
+            className="fas fa-heart"
+            style={{ fontSize: 20, margin: "0 10px" }}
+            title="Add to Wish List"
+            onClick={() => userCntx.addToWishList(item)}
+          ></i>
+        )}
+        <i
+          title={moneySymbol + item.price}
+          className="fa fa-shopping-cart"
+          aria-hidden="true"
+          onClick={() => userCntx.addToCartItems(item)}
+        ></i>
+        {mouseOver && (
+          <i
+            title="Add to Compare"
+            className="fas fa-random"
+            style={{ fontSize: 20, margin: "0 10px" }}
+            onClick={() => userCntx.addToCompareList(item)}
+          ></i>
+        )}
+      </div>
 
-      <i
-        title={moneySymbol + item.price}
-        className="fa fa-shopping-cart"
-        aria-hidden="true"
-        onClick={() => userCntx.addToCartItems(item)}
-      ></i>
       <Card.Body>
         <Rate rate={item.rate} />
         <Card.Text className={styles["price-block"]}>
