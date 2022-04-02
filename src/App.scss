@@ -86,7 +86,7 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  img{
+  img {
     width: 100px;
   }
 }
@@ -232,6 +232,7 @@
   display: block;
   position: fixed;
   top: 0;
+  height: 78px;
   background-color: #d5d0d0;
   z-index: 9999999;
   opacity: 0.9;
@@ -281,6 +282,6 @@
     background: #62ab00;
   }
   &:hover {
-    opacity: .9;
+    opacity: 0.9;
   }
 }
