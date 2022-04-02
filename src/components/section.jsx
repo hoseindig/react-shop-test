@@ -1,16 +1,11 @@
 import { useState, useEffect } from "react";
 import {
-  Card,
-  Button,
   Container,
-  CardGroup,
   Row,
   Col,
-  Pagination,
 } from "react-bootstrap";
 import CardGroupCarouselBox from "./CardGroupCarousel";
 import CardCarousel from "./CardCarousel/";
-import TablePagination from "@mui/material/TablePagination";
 import PaginationBar from "./base/PaginationBar";
 import styles from "./Section.module.scss";
 import Combo from "./base/combo";
@@ -24,20 +19,10 @@ const Section = ({ cards, title, bigCard, centerMode, slide }) => {
   const [page, setPage] = useState(6);
   const [activePage, setActivePage] = useState(1);
   const [pages, setPages] = useState(2);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const paginate = (array, page_size, page_number) => {
     // human-readable page numbers usually start with 1, so we reduce 1 in the first argument
     return array.slice((page_number - 1) * page_size, page_number * page_size);
-  };
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
   };
 
   useEffect(() => {
