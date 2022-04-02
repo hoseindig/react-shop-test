@@ -53,19 +53,18 @@ const MainBox = () => {
           cards={userCntx.productList.filter((i) => i.category === 3)}
           centerMode={true}
           slide={true}
-
         />
 
         <FeaturesBox features={userCntx.featureList} />
         <PromoImage />
-        <ProductsInTabAndSpecialOffer cards={userCntx.productList} />
-
+      </Container>
+      <ProductsInTabAndSpecialOffer cards={userCntx.productList} /> 
+      <Container>
         <Section
           title="CLIENT TESTIMONIALS"
           cards={userCntx.clientList}
           bigCard={true}
           slide={false}
-
         />
         <BrandCarousel />
       </Container>

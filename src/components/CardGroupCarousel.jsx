@@ -37,7 +37,7 @@ const CardGroupCarouselBox = ({
       <Carousel
         responsive={responsiveConfig ? responsiveConfig : responsive}
         autoPlay={true}
-        autoPlaySpeed={5000}
+        autoPlaySpeed={5000000}
         showDots={true}
         infinite={true}
         dotListClass="custom-dot-list-style"

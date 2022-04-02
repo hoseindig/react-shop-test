@@ -19,7 +19,7 @@ function App() {
   return (
     <UserProvider>
       <div className="App">
-        <Container fluid>
+        <div  >
           <Row>
             <Col>
               <TopNavbar />
@@ -51,7 +51,7 @@ function App() {
           <Row>
             <Footer />
           </Row>
-        </Container>
+        </div>
       </div>
     </UserProvider>
   );

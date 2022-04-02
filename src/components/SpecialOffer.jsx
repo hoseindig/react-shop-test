@@ -1,6 +1,6 @@
 import styles from "./SpecialOffer.module.scss";
 import CardGroupBox from "./CardGroupCarousel";
-const SpecialOffer = ({cards}) => {
+const SpecialOffer = ({ cards }) => {
   const cardsResponsiveConfig = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -21,7 +21,7 @@ const SpecialOffer = ({cards}) => {
     },
   };
   return (
-    <div>
+    <div className={styles["box"]}>
       <h3 className={styles["home-sidebar-title"]}>Special offer</h3>
       <CardGroupBox cards={cards} responsiveConfig={cardsResponsiveConfig} />
     </div>
